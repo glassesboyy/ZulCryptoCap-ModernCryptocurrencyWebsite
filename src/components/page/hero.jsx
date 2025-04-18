@@ -5,7 +5,7 @@ export const Hero = () => {
   return (
     <div className="h-screen w-full flex md:items-center md:justify-center bg-black antialiased bg-grid-white relative overflow-hidden">
       <Spotlight />
-      <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-20 md:pt-0">
+      <div className="p-4 max-w-7xl mx-auto relative z-10 w-full pt-32 md:pt-20">
         <h1 className="text-5xl md:text-6xl lg:text-8xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white via-gray-100 to-black/5">
           Start and Build
           <br className="block sm:hidden" />
