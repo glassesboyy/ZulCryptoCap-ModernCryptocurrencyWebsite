@@ -103,7 +103,7 @@ const CTAButton = () => {
             </defs>
           </svg>
         </span>
-        <span className="px-2 text-white font-normal text-xl">
+        <span className="px-2 text-white font-normal text-lg">
           Connect to Wallet
         </span>
       </span>
