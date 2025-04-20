@@ -1,6 +1,6 @@
 "use client";
-import { Spotlight } from "../ui/spotlight-new";
 import CTAButton from "../ui/cta-button";
+import { Spotlight } from "../ui/spotlight-new";
 
 export const Hero = () => {
   return (
@@ -19,7 +19,8 @@ export const Hero = () => {
         </p>
         {/* Add CTAButton with proper spacing */}
         <div className="mt-8 flex justify-center">
-          <CTAButton />
+          <CTAButton buttonText="Connect to Wallet" />{" "}
+          {/* Uses default WalletIcon */}
         </div>
       </div>
     </div>

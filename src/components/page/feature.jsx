@@ -5,6 +5,7 @@ import {
   IconShieldLock,
   IconWallet,
 } from "@tabler/icons-react";
+import CTASection from "../ui/cta-section";
 import FeatureCard from "../ui/feature-card";
 
 export const Feature = () => {
@@ -43,6 +44,8 @@ export const Feature = () => {
             description="Execute trades instantly with our high-performance trading engine and low latency infrastructure."
           />
         </div>
+
+        <CTASection />
       </div>
     </div>
   );
