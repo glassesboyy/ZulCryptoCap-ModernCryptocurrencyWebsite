@@ -59,7 +59,7 @@ export const NavBody = ({ children, className, visible }) => {
       }}
       className={cn(
         "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-black/40 border border-violet-900/30 px-6 py-2.5 lg:flex",
-        visible && "bg-black/80 border-white/20",
+        visible && "bg-black/80 border-violet-900/30",
         className
       )}
     >
@@ -152,7 +152,7 @@ export const MobileNavMenu = ({ children, className, isOpen, onClose }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-17 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-black px-6 py-8 border border-white/10",
+            "absolute inset-x-0 top-17 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-black px-6 py-8 border border-violet-900/30",
             className
           )}
         >
@@ -197,7 +197,7 @@ export const NavbarButton = ({
     primary: "bg-white text-black hover:bg-gray-100",
     secondary:
       "bg-transparent border border-white/20 text-white hover:bg-white/10",
-    dark: "bg-black text-white border border-violet-950/50 hover:bg-violet-900 hover:text-white",
+    dark: "bg-black text-white border border-violet-950/50 hover:bg-violet-900/50 hover:text-white",
     gradient: "bg-white text-black hover:bg-gray-100",
   };
 
