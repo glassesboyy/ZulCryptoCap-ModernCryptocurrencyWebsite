@@ -58,7 +58,7 @@ export const NavBody = ({ children, className, visible }) => {
         minWidth: "800px",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-black/40 border border-white/10 px-6 py-2.5 lg:flex",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-black/40 border border-violet-900/30 px-6 py-2.5 lg:flex",
         visible && "bg-black/80 border-white/20",
         className
       )}
@@ -75,7 +75,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white/70 transition duration-200 hover:text-white lg:flex lg:space-x-2",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-white/70 transition duration-1000 hover:text-white lg:flex lg:space-x-2",
         className
       )}
     >
@@ -83,14 +83,14 @@ export const NavItems = ({ items, className, onItemClick }) => {
         <a
           onMouseEnter={() => setHovered(idx)}
           onClick={onItemClick}
-          className="relative px-4 py-2 text-white/70 hover:text-white"
+          className="relative px-4 py-2 text-white/70 hover:text-white transition duration-1000"
           key={`link-${idx}`}
           href={item.link}
         >
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-white/10"
+              className="absolute inset-0 h-full w-full rounded-full bg-violet-900/30"
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -120,7 +120,7 @@ export const MobileNav = ({ children, className, visible }) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-black/40 border border-white/10 px-0 py-2 lg:hidden",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-black/40 border border-violet-950/40 px-0 py-2 lg:hidden",
         visible && "bg-black/40",
         className
       )}
@@ -197,7 +197,7 @@ export const NavbarButton = ({
     primary: "bg-white text-black hover:bg-gray-100",
     secondary:
       "bg-transparent border border-white/20 text-white hover:bg-white/10",
-    dark: "bg-black text-white border border-white/20 hover:bg-white hover:text-black",
+    dark: "bg-black text-white border border-violet-950/50 hover:bg-violet-900 hover:text-white",
     gradient: "bg-white text-black hover:bg-gray-100",
   };
 
