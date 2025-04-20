@@ -15,6 +15,13 @@ const CoinCard = ({
 }) => {
   const isPositive = priceChange >= 0;
 
+  const formatNumber = (number) => {
+    return number.toLocaleString("en-US", {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    });
+  };
+
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -60,9 +67,9 @@ const CoinCard = ({
           <Sparklines data={sparklineData} width={200} height={60}>
             <SparklinesLine
               style={{
-                strokeWidth: 2,
+                strokeWidth: 1.5,
                 stroke: isPositive ? "#22c55e" : "#ef4444",
-                fill: "none",
+                fill: isPositive ? "#22c55e" : "#ef4444",
               }}
             />
           </Sparklines>
@@ -74,13 +81,13 @@ const CoinCard = ({
         <div>
           <p className="text-sm text-violet-300">Volume 24h</p>
           <p className="text-base font-semibold text-white">
-            ${volume.toLocaleString()}
+            ${formatNumber(volume)}
           </p>
         </div>
         <div>
           <p className="text-sm text-violet-300">Market Cap</p>
           <p className="text-base font-semibold text-white">
-            ${marketCap.toLocaleString()}
+            ${formatNumber(marketCap)}
           </p>
         </div>
       </div>
