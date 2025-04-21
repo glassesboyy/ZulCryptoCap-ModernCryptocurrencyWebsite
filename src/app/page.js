@@ -4,6 +4,7 @@ import { MainNavbar } from "@/components/page/main-navbar";
 import { MarketTrend } from "@/components/page/market-trend";
 import { MarketUpdate } from "@/components/page/market-update";
 import { Tutorial } from "@/components/page/tutorial";
+import { Faq } from "@/components/page/faq";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Feature />
       <MarketUpdate />
       <Tutorial />
+      <Faq />
     </main>
   );
 }

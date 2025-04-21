@@ -56,7 +56,7 @@ const tutorialContent = [
 export function Tutorial() {
   return (
     <section className="py-20 bg-black">
-      <div className="container max-w-5xl mx-auto px-4 ">
+      <div className="container max-w-5xl mx-auto">
         <h2 className="text-5xl font-bold text-white text-center mb-4">
           Start Your Crypto Journey
         </h2>
