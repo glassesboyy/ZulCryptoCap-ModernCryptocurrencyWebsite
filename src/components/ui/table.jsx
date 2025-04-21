@@ -1,10 +1,23 @@
 "use client";
 import { IconSearch } from "@tabler/icons-react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
+import { useState } from "react";
 
 const categories = ["All", "Metaverse", "Gaming", "Defi", "NFT"];
 
 const CoinTable = ({ data }) => {
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredData = data.filter((coin) => {
+    const matchesCategory =
+      activeCategory === "All" || coin.categories.includes(activeCategory);
+    const matchesSearch =
+      coin.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      coin.symbol.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
+
   return (
     <div className="w-full">
       {/* Categories and Search */}
@@ -13,7 +26,12 @@ const CoinTable = ({ data }) => {
           {categories.map((category) => (
             <button
               key={category}
-              className="px-4 py-2 rounded-full text-sm font-medium border border-violet-950 text-white hover:bg-violet-900/30 focus:bg-violet-900/30 focus:border-violet-500 focus:text-white transition-colors cursor-pointer outline-none"
+              className={`px-4 py-2 rounded-full text-sm font-medium border border-violet-950 text-white hover:bg-violet-900/30 transition-colors cursor-pointer outline-none ${
+                activeCategory === category
+                  ? "bg-violet-900/30 border-violet-500"
+                  : ""
+              }`}
+              onClick={() => setActiveCategory(category)}
             >
               {category}
             </button>
@@ -27,6 +45,8 @@ const CoinTable = ({ data }) => {
           <input
             type="text"
             placeholder="Search coin"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10 pr-4 py-2 bg-violet-900/20 border border-violet-900/30 rounded-lg text-white focus:outline-none focus:border-violet-500"
           />
         </div>
@@ -50,7 +70,7 @@ const CoinTable = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((coin, index) => (
+            {filteredData.map((coin, index) => (
               <tr
                 key={coin.symbol}
                 className="bg-black/40 backdrop-blur-md border-b border-violet-900/30 hover:bg-violet-900/10 transition-colors"
