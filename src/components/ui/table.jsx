@@ -39,8 +39,12 @@ const CoinTable = ({ data }) => {
             <tr className="text-violet-300 text-sm border-b border-violet-900/30">
               <th className="text-left pl-4 py-4 font-medium">NO</th>
               <th className="text-left font-medium">NAME</th>
-              <th className="text-center font-medium">LAST PRICE</th>
-              <th className="text-center font-medium">24H CHANGE</th>
+              <th className="hidden sm:table-cell text-center font-medium">
+                LAST PRICE
+              </th>
+              <th className="hidden sm:table-cell text-center font-medium">
+                24H CHANGE
+              </th>
               <th className="text-center font-medium">MARKET STATS</th>
               <th className="text-center pr-4 font-medium">TRADE</th>
             </tr>
@@ -59,13 +63,17 @@ const CoinTable = ({ data }) => {
                       <div className="text-white font-medium">
                         {coin.symbol}
                       </div>
-                      <div className="text-violet-300 text-sm">{coin.name}</div>
+                      <div className="text-violet-300 text-sm hidden xs:block">
+                        {coin.name}
+                      </div>
                     </div>
                   </div>
                 </td>
-                <td className="text-center text-white">${coin.price}</td>
+                <td className="hidden sm:table-cell text-center text-white">
+                  ${coin.price}
+                </td>
                 <td
-                  className={`text-center ${
+                  className={`hidden sm:table-cell text-center ${
                     coin.priceChange >= 0 ? "text-green-500" : "text-red-500"
                   }`}
                 >
@@ -73,12 +81,11 @@ const CoinTable = ({ data }) => {
                   {coin.priceChange}%
                 </td>
                 <td className="px-4">
-                  <div className="h-[60px]">
-                    {" "}
+                  <div className="h-[40px] md:h-[100px] w-full">
                     <Sparklines
                       data={coin.sparklineData}
-                      width={70}
-                      height={20}
+                      width={100}
+                      height={30}
                     >
                       <SparklinesLine
                         style={{
@@ -92,7 +99,7 @@ const CoinTable = ({ data }) => {
                 </td>
                 <td className="pr-4">
                   <div className="flex justify-center">
-                    <button className="px-4 py-2 bg-black border border-violet-950 hover:bg-violet-900/30 text-white rounded-sm text-sm font-medium transition-colors cursor-pointer">
+                    <button className="px-3 sm:px-4 py-2 bg-black border border-violet-950 hover:bg-violet-900/30 text-white rounded-sm text-xs sm:text-sm font-medium transition-colors cursor-pointer">
                       Trade
                     </button>
                   </div>
