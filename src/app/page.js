@@ -6,6 +6,7 @@ import { MarketTrend } from "@/components/page/market-trend";
 import { MarketUpdate } from "@/components/page/market-update";
 import { NewsSection } from "@/components/page/news";
 import { Tutorial } from "@/components/page/tutorial";
+import { Footer } from "@/components/page/footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Tutorial />
       <Faq />
       <NewsSection />
+      <Footer />
     </main>
   );
 }
