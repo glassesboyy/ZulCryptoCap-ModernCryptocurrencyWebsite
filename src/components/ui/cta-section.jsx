@@ -35,22 +35,26 @@ const ArrowIcon = () => (
 
 const CTASection = () => {
   return (
-    <div className="relative mt-24 rounded-2xl border border-violet-900/30 bg-black/40 p-12 backdrop-blur-md overflow-hidden">
+    <div className="relative mt-12 xs:mt-16 sm:mt-20 md:mt-24 rounded-xl xs:rounded-2xl border border-violet-900/30 bg-black/40 p-6 xs:p-8 sm:p-12 backdrop-blur-md overflow-hidden">
       {/* Gradient background effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-violet-900/30 to-transparent" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
-        <h2 className="text-4xl font-bold text-white mb-4">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl font-bold text-white mb-3 xs:mb-4">
           New to Cryptocurrency? We've Got You Covered.
         </h2>
-        <p className="text-lg text-white/70 mb-4 max-w-3xl">
-          Curious about crypto but not sure where to start? We’ll break down
+        <p className="text-base xs:text-lg text-white/70 mb-6 max-w-xl xs:max-w-2xl sm:max-w-3xl">
+          Curious about crypto but not sure where to start? We'll break down
           what cryptocurrencies are, how they work, and why owning some today
-          could be one of the smartest moves you’ll make. Let’s dive in and take
+          could be one of the smartest moves you'll make. Let's dive in and take
           your first step into the future of finance.
         </p>
 
-        <CTAButton buttonText="Learn & Explore Now" icon={ArrowIcon} />
+        <CTAButton
+          buttonText="Learn & Explore Now"
+          icon={ArrowIcon}
+          className="text-sm xs:text-base"
+        />
       </div>
     </div>
   );

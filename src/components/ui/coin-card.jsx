@@ -77,7 +77,7 @@ const CoinCard = ({
       </div>
 
       {/* Stats section */}
-      <div className="mt-6 grid grid-cols-2 gap-4 border-t border-violet-900/20 pt-4 cursor-pointer">
+      <div className="mt-6 grid grid-cols-2 gap-4 pt-10 md:pt-6 lg:pt-4 cursor-pointer">
         <div>
           <p className="text-sm text-violet-300">Volume 24h</p>
           <p className="text-base font-semibold text-white">

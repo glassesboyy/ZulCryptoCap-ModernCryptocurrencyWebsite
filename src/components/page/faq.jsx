@@ -69,15 +69,15 @@ export const Faq = () => {
       className="faq-item group rounded-md border border-violet-950/50 bg-gradient-to-tl from-violet-950/40 to-transparent hover:bg-violet-500/10 hover:border-violet-950 transition-all duration-500"
     >
       <button
-        className="flex w-full items-center justify-between px-4 py-5 sm:p-6 transition-all duration-300"
+        className="flex w-full items-center justify-between px-3 py-4 xs:px-4 xs:py-5 sm:p-6 transition-all duration-300"
         onClick={() => handleClick(faq.id)}
       >
-        <span className="text-base md:text-xl lg:text-lg font-normal text-white">
+        <span className="text-sm xs:text-base sm:text-lg md:text-xl font-normal text-white">
           {faq.question}
         </span>
-        <span className="ml-6 flex-shrink-0">
+        <span className="ml-4 xs:ml-6 flex-shrink-0">
           <svg
-            className={`h-6 w-6 text-violet-400 transition-all duration-500 ${
+            className={`h-4 w-4 xs:h-5 xs:w-5 sm:h-6 sm:w-6 text-violet-400 transition-all duration-500 ${
               activeId === faq.id ? "rotate-[360deg]" : ""
             }`}
             fill="none"
@@ -94,11 +94,11 @@ export const Faq = () => {
         </span>
       </button>
       <div
-        className={`px-4 pb-5 sm:px-6 sm:pb-6 overflow-hidden transition-all duration-300 ${
+        className={`px-3 pb-4 xs:px-4 xs:pb-5 sm:px-6 sm:pb-6 overflow-hidden transition-all duration-300 ${
           activeId === faq.id ? "block" : "hidden"
         }`}
       >
-        <p className="text-sm md:text-base lg:text-base text-white/70 font-light">
+        <p className="text-xs xs:text-sm sm:text-base text-white/70 font-light">
           {faq.answer}
         </p>
       </div>
@@ -108,24 +108,24 @@ export const Faq = () => {
   return (
     <div
       id="faq"
-      className="w-full py-8 md:py-20 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black"
+      className="w-full py-12 xs:py-16 sm:py-20 px-4 xs:px-6 bg-black"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="space-y-2 text-center mb-12">
-          <h2 className="text-5xl font-bold text-white mb-4">
+        <div className="space-y-2 text-center mb-8 xs:mb-10 sm:mb-12">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 xs:mb-4">
             Common Questions About Crypto
           </h2>
-          <p className="text-white font-light text-lg">
+          <p className="text-white/70 text-base xs:text-lg font-light max-w-2xl mx-auto">
             Find clear answers to common questions about cryptocurrency,
             blockchain technology, and digital assets. All in one place.
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-          <div className="flex-1 space-y-4">
+        <div className="flex flex-col md:flex-row gap-4 xs:gap-5 md:gap-6">
+          <div className="flex-1 space-y-4 xs:space-y-5">
             {leftColumnFaqs.map(renderFaqItem)}
           </div>
-          <div className="flex-1 space-y-4">
+          <div className="flex-1 space-y-4 xs:space-y-5">
             {rightColumnFaqs.map(renderFaqItem)}
           </div>
         </div>

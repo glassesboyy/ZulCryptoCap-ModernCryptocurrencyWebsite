@@ -3,13 +3,13 @@ import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 export function NewsSection() {
   return (
-    <div id="news" className="w-full ">
-      <div className="w-full py-16 bg-black">
-        <div className="max-w-7xl mx-auto mb-12">
-          <h2 className="text-5xl font-bold text-white mb-4">
+    <div id="news" className="w-full">
+      <div className="w-full py-12 xs:py-16 sm:py-20 bg-black px-4 xs:px-6">
+        <div className="max-w-7xl mx-auto mb-8 xs:mb-10 sm:mb-12">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 xs:mb-4">
             Latest Crypto News & Article
           </h2>
-          <p className="text-lg font-light  text-white">
+          <p className="text-base xs:text-lg font-light text-white/70">
             Stay informed with the latest cryptocurrency news and market trends,
             covering price changes, blockchain updates, and investor insights.
           </p>
@@ -28,11 +28,11 @@ export function NewsSection() {
           ))}
         </BentoGrid>
 
-        <div className="mt-8 text-center">
-          <button className="group px-6 py-3 bg-black underline uppercase text-white hover:text-violet-950 rounded-lg font-medium transition-colors inline-flex items-center gap-1 cursor-pointer">
+        <div className="mt-6 xs:mt-8 sm:mt-10 text-center">
+          <button className="group px-4 xs:px-6 py-2 xs:py-3 bg-black underline uppercase text-sm xs:text-base text-white hover:text-violet-400 rounded-lg font-medium transition-colors inline-flex items-center gap-1 cursor-pointer">
             See All News & Article
             <IconArrowRight
-              size={20}
+              size={18}
               className="-rotate-45 transform transition-transform duration-300 group-hover:rotate-0"
             />
           </button>

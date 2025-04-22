@@ -76,6 +76,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  /* Add breakpoint variables */
+  --breakpoint-xs: 420px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1280px;
 }
 
 html {
@@ -128,6 +133,14 @@ html {
 }
 
 @layer base {
+  /* Add breakpoint custom properties */
+  :root {
+    --screen-xs: only screen and (max-width: 420px);
+    --screen-sm: only screen and (min-width: 421px) and (max-width: 640px);
+    --screen-md: only screen and (min-width: 641px) and (max-width: 1024px);
+    --screen-lg: only screen and (min-width: 1025px) and (max-width: 1280px);
+  }
+
   * {
     @apply border-border outline-ring/50;
   }

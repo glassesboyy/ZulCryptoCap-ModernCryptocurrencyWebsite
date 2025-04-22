@@ -40,7 +40,7 @@ export function MainNavbar() {
 
   return (
     <div className="relative w-full">
-      <Navbar>
+      <Navbar className="px-4 xs:px-6">
         {/* Desktop Navigation */}
         <NavBody>
           <NavbarLogo />
@@ -52,7 +52,7 @@ export function MainNavbar() {
 
         {/* Mobile Navigation */}
         <MobileNav>
-          <MobileNavHeader>
+          <MobileNavHeader className="px-4 xs:px-6">
             <NavbarLogo />
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
@@ -62,6 +62,7 @@ export function MainNavbar() {
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
+            className="mt-2 text-sm xs:text-base space-y-4"
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
@@ -69,15 +70,16 @@ export function MainNavbar() {
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-white"
+                className="relative text-white hover:text-violet-400 transition-colors"
               >
                 <span className="block">{item.name}</span>
               </a>
             ))}
-            <div className="flex w-full flex-col gap-4">
+            <div className="flex w-full flex-col gap-4 pt-4">
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="dark"
+                className="w-full"
               >
                 Connect to Wallet
               </NavbarButton>
