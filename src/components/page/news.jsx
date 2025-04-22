@@ -5,7 +5,7 @@ export function NewsSection() {
   return (
     <div className="w-full">
       <div className="w-full py-16 bg-black">
-        <div className="max-w-6xl mx-auto text-right mb-12">
+        <div className="max-w-7xl mx-auto mb-12">
           <h2 className="text-5xl font-bold text-white mb-4">
             Latest Crypto News & Article
           </h2>
@@ -15,7 +15,7 @@ export function NewsSection() {
           </p>
         </div>
 
-        <BentoGrid className="max-w-6xl mx-auto md:auto-rows-[20rem]">
+        <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
           {newsItems.map((item, i) => (
             <BentoGridItem
               key={i}

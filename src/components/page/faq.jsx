@@ -107,7 +107,7 @@ export const Faq = () => {
 
   return (
     <div className="w-full py-8 md:py-20 lg:py-20 px-4 sm:px-6 lg:px-8 bg-black">
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="space-y-2 text-center mb-12">
           <h2 className="text-5xl font-bold text-white mb-4">
             Common Questions About Crypto
