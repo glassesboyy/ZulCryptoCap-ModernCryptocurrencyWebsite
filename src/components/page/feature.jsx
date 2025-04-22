@@ -10,7 +10,7 @@ import FeatureCard from "../ui/feature-card";
 
 export const Feature = () => {
   return (
-    <div className="mx-auto py-24 bg-black">
+    <div id="feature" className="mx-auto py-24 bg-black ">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-white mb-4">

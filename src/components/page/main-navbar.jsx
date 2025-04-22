@@ -19,20 +19,20 @@ export function MainNavbar() {
       link: "#home",
     },
     {
-      name: "Business",
-      link: "#business",
-    },
-    {
-      name: "Trade",
-      link: "#trade",
+      name: "Feature",
+      link: "#feature",
     },
     {
       name: "Market",
       link: "#market",
     },
     {
-      name: "Learn",
-      link: "#learn",
+      name: "Faq",
+      link: "#faq",
+    },
+    {
+      name: "News",
+      link: "#news",
     },
   ];
 

@@ -85,7 +85,7 @@ export function MarketUpdate() {
   ];
 
   return (
-    <div className="w-full min-h-screen bg-black px-4 py-20">
+    <div id="market" className="w-full min-h-screen bg-black px-4 py-20">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="mb-12">
