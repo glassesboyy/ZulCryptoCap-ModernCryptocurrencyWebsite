@@ -1,0 +1,37 @@
+import { RegisterForm } from "@/components/page/register-form";
+
+export default function RegisterPage() {
+  return (
+    <div className="grid min-h-svh lg:grid-cols-2 bg-black">
+      <div className="flex flex-col gap-4 p-6 md:p-10 bg-black/40">
+        <div className="flex justify-center gap-2 md:justify-start">
+          <a
+            href="/"
+            className="flex items-center gap-2 font-medium text-white group transition-all duration-300 text-2xl"
+          >
+            <span>
+              <span className="text-violet-500 font-black group-hover:text-violet-400 transition-colors">
+                Zul
+              </span>
+              <span className="group-hover:text-violet-200 transition-colors">
+                CryptoCap
+              </span>
+            </span>
+          </a>
+        </div>
+        <div className="flex flex-1 items-center justify-center">
+          <div className="w-full max-w-xs">
+            <RegisterForm />
+          </div>
+        </div>
+      </div>
+      <div className="relative hidden lg:block bg-gradient-to-br from-violet-950 to-black">
+        <img
+          src="/news/news1.jpg"
+          alt="Crypto Authentication"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
+        />
+      </div>
+    </div>
+  );
+}
