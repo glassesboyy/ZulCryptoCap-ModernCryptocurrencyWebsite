@@ -2,21 +2,21 @@
 
 import { Component as ChartLineInteractive } from "@/components/ui/chart-line-interactive";
 import {
-  IconStar,
-  IconArrowUpRight,
   IconArrowDownRight,
-  IconWorld,
-  IconBrandTwitter,
-  IconBrandReddit,
+  IconArrowLeft,
+  IconArrowUpRight,
+  IconBox,
+  IconBrandDiscord,
   IconBrandGithub,
-  IconLink,
+  IconBrandReddit,
+  IconBrandTelegram,
+  IconBrandTwitter,
+  IconChartBar,
   IconCopy,
   IconInfoCircle,
-  IconBrandDiscord,
-  IconBrandTelegram,
-  IconChartBar,
-  IconBox,
-  IconArrowLeft, // Add this import
+  IconLink,
+  IconStar,
+  IconWorld,
 } from "@tabler/icons-react";
 import Link from "next/link";
 
@@ -146,32 +146,37 @@ const coinData = {
 const ExamplePage = () => {
   return (
     <div className="min-h-screen bg-black">
-      <div className="container mx-auto p-10">
+      <div className="container mx-auto p-4 xs:p-6 sm:p-8 md:p-10">
         {/* Header with Back Button */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col xs:flex-row justify-between items-start xs:items-center gap-4 mb-6 md:mb-8">
           <div className="flex items-center gap-4">
             <div className="relative">
               <img
                 src={coinData.logo}
                 alt={coinData.name}
-                className="w-16 h-16 md:w-20 md:h-20"
+                className="w-12 h-12 xs:w-16 xs:h-16 md:w-20 md:h-20"
               />
-              <span className="absolute -top-2 -right-2 px-2 py-1 bg-violet-900/50 border border-violet-500/20 rounded-md text-xs text-white/70">
+              <span className="absolute -top-2 -right-2 px-2 py-1 bg-violet-900/50 border border-violet-500/20 rounded-md text-[10px] xs:text-xs text-white/70">
                 {coinData.rank}
               </span>
             </div>
             <div>
-              <div className="flex items-center gap-3">
-                <h1 className="text-2xl md:text-3xl font-bold text-white">
+              <div className="flex items-center gap-2 xs:gap-3">
+                <h1 className="text-xl xs:text-2xl md:text-3xl font-bold text-white">
                   {coinData.name}
                 </h1>
-                <span className="text-white/60 text-md">{coinData.symbol}</span>
-                <button className="p-1.5 hover:bg-violet-900/30 rounded-full transition-colors">
-                  <IconStar className="w-5 h-5 text-white/40" stroke={1.5} />
+                <span className="text-white/60 text-sm xs:text-md">
+                  {coinData.symbol}
+                </span>
+                <button className="p-1 xs:p-1.5 hover:bg-violet-900/30 rounded-full transition-colors">
+                  <IconStar
+                    className="w-4 h-4 xs:w-5 xs:h-5 text-white/40"
+                    stroke={1.5}
+                  />
                 </button>
               </div>
-              <div className="mt-1 flex items-center gap-3">
-                <span className="text-2xl md:text-3xl font-bold text-white">
+              <div className="mt-1 flex items-center gap-2 xs:gap-3">
+                <span className="text-xl xs:text-2xl md:text-3xl font-bold text-white">
                   ${coinData.currentPrice}
                 </span>
                 <span
@@ -192,32 +197,36 @@ const ExamplePage = () => {
             </div>
           </div>
 
-          {/* Back Button - Moved here */}
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-4 py-2 text-white/80 hover:text-white bg-violet-950/20 hover:bg-violet-900/30 rounded-lg transition-colors border border-violet-500/20"
+            className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 text-sm xs:text-base text-white/80 hover:text-white bg-violet-950/20 hover:bg-violet-900/30 rounded-lg transition-colors border border-violet-500/20"
           >
-            <IconArrowLeft className="w-5 h-5" />
+            <IconArrowLeft className="w-4 h-4 xs:w-5 xs:h-5" />
             <span>Back to Home</span>
           </Link>
         </div>
 
         {/* Quick Links & Contract */}
-        <div className="mb-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-white font-bold">Links & Social</h3>
-              <span className="text-white/40 text-sm">Official channels</span>
+        <div className="mb-6 md:mb-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
+          {/* Quick Links Card */}
+          <div className="bg-violet-950/20 backdrop-blur-md p-3 xs:p-4 rounded-lg border border-violet-500/20">
+            <div className="flex flex-col xs:flex-row xs:items-center justify-between mb-4">
+              <h3 className="text-white font-bold text-sm xs:text-base">
+                Links & Social
+              </h3>
+              <span className="text-white/40 text-xs xs:text-sm">
+                Official channels
+              </span>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-2 xs:gap-3">
               <a
                 href={coinData.links.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconWorld className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconWorld className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Website
                 </span>
               </a>
@@ -225,10 +234,10 @@ const ExamplePage = () => {
                 href={coinData.links.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBrandTwitter className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBrandTwitter className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Twitter
                 </span>
               </a>
@@ -236,10 +245,10 @@ const ExamplePage = () => {
                 href={coinData.links.discord}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBrandDiscord className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBrandDiscord className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Discord
                 </span>
               </a>
@@ -247,10 +256,10 @@ const ExamplePage = () => {
                 href={coinData.links.telegram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBrandTelegram className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBrandTelegram className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Telegram
                 </span>
               </a>
@@ -258,10 +267,10 @@ const ExamplePage = () => {
                 href={coinData.links.reddit}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBrandReddit className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBrandReddit className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Reddit
                 </span>
               </a>
@@ -269,10 +278,10 @@ const ExamplePage = () => {
                 href={coinData.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBrandGithub className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBrandGithub className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   GitHub
                 </span>
               </a>
@@ -280,10 +289,10 @@ const ExamplePage = () => {
                 href={coinData.links.explorer}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconChartBar className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconChartBar className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Explorer
                 </span>
               </a>
@@ -291,17 +300,17 @@ const ExamplePage = () => {
                 href={coinData.links.whitepaper}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer flex items-center gap-2 px-4 py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
+                className="cursor-pointer flex items-center gap-2 px-3 xs:px-4 py-1.5 xs:py-2 bg-white/5 rounded-lg hover:bg-white/10 transition-colors group"
               >
-                <IconBox className="w-5 h-5 text-white/60 group-hover:text-white/90" />
-                <span className="text-white/80 group-hover:text-white">
+                <IconBox className="w-4 h-4 xs:w-5 xs:h-5 text-white/60 group-hover:text-white/90" />
+                <span className="text-sm xs:text-base text-white/80 group-hover:text-white">
                   Whitepaper
                 </span>
               </a>
             </div>
           </div>
 
-          <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
+          <div className="bg-violet-950/20 backdrop-blur-md p-3 xs:p-4 rounded-lg border border-violet-500/20">
             <div className="flex items-center justify-between mb-2">
               <div className="flex items-center gap-2">
                 <h3 className="text-white font-bold">Smart Contract</h3>
@@ -363,49 +372,51 @@ const ExamplePage = () => {
         </div>
 
         {/* Trading Info */}
-        <div className="mb-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="mb-6 md:mb-8 grid grid-cols-1 lg:grid-cols-3 gap-4">
           {/* Price Pairs */}
-          <div className="lg:col-span-2 bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
+          <div className="lg:col-span-2 bg-violet-950/20 backdrop-blur-md p-3 xs:p-4 rounded-lg border border-violet-500/20">
             <h3 className="text-white font-bold mb-4">Markets</h3>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="text-white/60 text-sm border-b border-white/10">
-                    <th className="text-left py-2">Exchange</th>
-                    <th className="text-left py-2">Pair</th>
-                    <th className="text-right py-2">Price</th>
-                    <th className="text-right py-2">Volume</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {coinData.priceData.pricePairs.map((pair, idx) => (
-                    <tr
-                      key={idx}
-                      className="border-b border-white/5 text-white hover:bg-white/5 transition-colors"
-                    >
-                      <td className="py-3">
-                        <div className="flex items-center gap-2">
-                          <img
-                            src={pair.logo}
-                            alt={pair.exchange}
-                            className="w-6 h-6"
-                          />
-                          <span>{pair.exchange}</span>
-                        </div>
-                      </td>
-                      <td className="py-3">
-                        <span className="text-white/80">{pair.pair}</span>
-                      </td>
-                      <td className="text-right py-3">
-                        <span className="font-medium">${pair.price}</span>
-                      </td>
-                      <td className="text-right py-3">
-                        <span className="text-white/80">${pair.volume}</span>
-                      </td>
+            <div className="overflow-x-auto -mx-3 xs:-mx-4">
+              <div className="min-w-[600px] px-3 xs:px-4">
+                <table className="w-full">
+                  <thead>
+                    <tr className="text-white/60 text-sm border-b border-white/10">
+                      <th className="text-left py-2">Exchange</th>
+                      <th className="text-left py-2">Pair</th>
+                      <th className="text-right py-2">Price</th>
+                      <th className="text-right py-2">Volume</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {coinData.priceData.pricePairs.map((pair, idx) => (
+                      <tr
+                        key={idx}
+                        className="border-b border-white/5 text-white hover:bg-white/5 transition-colors"
+                      >
+                        <td className="py-3">
+                          <div className="flex items-center gap-2">
+                            <img
+                              src={pair.logo}
+                              alt={pair.exchange}
+                              className="w-6 h-6"
+                            />
+                            <span>{pair.exchange}</span>
+                          </div>
+                        </td>
+                        <td className="py-3">
+                          <span className="text-white/80">{pair.pair}</span>
+                        </td>
+                        <td className="text-right py-3">
+                          <span className="font-medium">${pair.price}</span>
+                        </td>
+                        <td className="text-right py-3">
+                          <span className="text-white/80">${pair.volume}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
             <div className="mt-4 pt-4 border-t border-white/10">
               <div className="flex justify-between items-center">
@@ -420,7 +431,7 @@ const ExamplePage = () => {
           </div>
 
           {/* Performance Metrics */}
-          <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
+          <div className="bg-violet-950/20 backdrop-blur-md p-3 xs:p-4 rounded-lg border border-violet-500/20">
             <h3 className="text-white font-bold mb-4">Performance</h3>
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-2">
@@ -462,7 +473,7 @@ const ExamplePage = () => {
         </div>
 
         {/* Main Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+        <div className="grid grid-cols-2 xs:grid-cols-2 md:grid-cols-4 gap-3 xs:gap-4 mb-6 md:mb-8">
           <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
             <p className="text-white/60 text-sm mb-1">Market Cap</p>
             <p className="text-xl font-bold text-white">
@@ -494,12 +505,12 @@ const ExamplePage = () => {
         </div>
 
         {/* Price Chart Section */}
-        <div className="mb-8 bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
+        <div className="mb-6 md:mb-8 bg-violet-950/20 backdrop-blur-md p-3 xs:p-4 rounded-lg border border-violet-500/20">
           <ChartLineInteractive />
         </div>
 
         {/* Supply Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 xs:gap-4 mb-6 md:mb-8">
           <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
             <div className="flex justify-between items-start mb-2">
               <p className="text-white/70">Circulating Supply</p>
@@ -532,7 +543,7 @@ const ExamplePage = () => {
         </div>
 
         {/* Additional Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-3 xs:gap-4">
           <div className="bg-violet-950/20 backdrop-blur-md p-4 rounded-lg border border-violet-500/20">
             <h3 className="text-white font-bold text-lg mb-3">
               Price Statistics
