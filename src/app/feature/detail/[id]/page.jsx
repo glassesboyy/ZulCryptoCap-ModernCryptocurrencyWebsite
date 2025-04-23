@@ -1,12 +1,14 @@
 "use client";
-import { IconArrowLeft } from "@tabler/icons-react";
-import Link from "next/link";
+
 import {
+  IconArrowLeft,
   IconChartBar,
   IconExchange,
   IconShieldLock,
   IconWallet,
 } from "@tabler/icons-react";
+import Link from "next/link";
+import { use } from "react";
 
 const featureDetails = {
   1: {
@@ -68,7 +70,9 @@ const featureDetails = {
 };
 
 export default function FeatureDetail({ params }) {
-  const feature = featureDetails[params.id];
+  const { id } = use(params);
+
+  const feature = featureDetails[id];
   const Icon = feature.icon;
 
   return (

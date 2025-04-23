@@ -4,6 +4,7 @@ import CoinCard from "../ui/coin-card";
 export function MarketTrend() {
   const coins = [
     {
+      id: 1,
       logo: "/coin/bitcoin-cryptocurrency.svg",
       symbol: "BTC",
       name: "Bitcoin",
@@ -17,6 +18,7 @@ export function MarketTrend() {
       ],
     },
     {
+      id: 2,
       logo: "/coin/ethereum-cryptocurrency.svg",
       symbol: "ETH",
       name: "Ethereum",
@@ -29,6 +31,7 @@ export function MarketTrend() {
       ],
     },
     {
+      id: 3,
       logo: "/coin/binance-coin-cryptocurrency.svg",
       symbol: "BNB",
       name: "Binance Coin",
@@ -41,6 +44,7 @@ export function MarketTrend() {
       ],
     },
     {
+      id: 4,
       logo: "/coin/cardano-cryptocurrency.svg",
       symbol: "ADA",
       name: "Cardano",
