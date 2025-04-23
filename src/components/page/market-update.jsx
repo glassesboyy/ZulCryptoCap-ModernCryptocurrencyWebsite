@@ -5,6 +5,7 @@ import CoinTable from "../ui/table";
 export function MarketUpdate() {
   const coinData = [
     {
+      id: 1,
       logo: "/coin/bitcoin-cryptocurrency.svg",
       symbol: "BTC",
       name: "Bitcoin",
@@ -16,6 +17,7 @@ export function MarketUpdate() {
       ],
     },
     {
+      id: 2,
       logo: "/coin/ethereum-cryptocurrency.svg",
       symbol: "ETH",
       name: "Ethereum",
@@ -27,6 +29,7 @@ export function MarketUpdate() {
       ],
     },
     {
+      id: 3,
       logo: "/coin/binance-coin-cryptocurrency.svg",
       symbol: "BNB",
       name: "Binance Coin",
@@ -36,6 +39,7 @@ export function MarketUpdate() {
       sparklineData: [375, 376, 377, 378, 377, 378, 379, 378, 378, 379],
     },
     {
+      id: 4,
       logo: "/coin/tether-cryptocurrency.svg",
       symbol: "USDT",
       name: "Tether",
@@ -45,6 +49,7 @@ export function MarketUpdate() {
       sparklineData: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
     },
     {
+      id: 5,
       logo: "/coin/cardano-cryptocurrency.svg",
       symbol: "ADA",
       name: "Cardano",
@@ -54,6 +59,7 @@ export function MarketUpdate() {
       sparklineData: [0.62, 0.61, 0.6, 0.59, 0.6, 0.61, 0.59, 0.61, 0.58, 0.59],
     },
     {
+      id: 6,
       logo: "/coin/filecoin-iou-cryptocurrency.svg",
       symbol: "FIL",
       name: "Filecoin",
@@ -63,6 +69,7 @@ export function MarketUpdate() {
       sparklineData: [7.5, 7.55, 7.6, 7.7, 7.75, 7.78, 7.8, 7.81, 7.82, 7.82],
     },
     {
+      id: 7,
       logo: "/coin/dogecoin-cryptocurrency.svg",
       symbol: "DOGE",
       name: "Dogecoin",
@@ -74,6 +81,7 @@ export function MarketUpdate() {
       ],
     },
     {
+      id: 8,
       logo: "/coin/polkadot-cryptocurrency.svg",
       symbol: "DOT",
       name: "Polkadot",

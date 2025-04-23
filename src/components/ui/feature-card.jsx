@@ -1,8 +1,9 @@
 "use client";
 import { IconArrowRight } from "@tabler/icons-react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const FeatureCard = ({ icon: Icon, title, description }) => {
+const FeatureCard = ({ icon: Icon, title, description, id }) => {
   return (
     <motion.div
       whileHover={{ y: -5 }}
@@ -23,13 +24,15 @@ const FeatureCard = ({ icon: Icon, title, description }) => {
       </div>
 
       <div className="mt-4 xs:mt-6 flex justify-end">
-        <button className="group inline-flex items-center gap-1 text-sm xs:text-base text-violet-400 hover:text-white transition-all duration-300 cursor-pointer">
-          Learn More
-          <IconArrowRight
-            size={14}
-            className="-rotate-45 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-0"
-          />
-        </button>
+        <Link href={`/feature/detail/${id}`}>
+          <button className="group inline-flex items-center gap-1 text-sm xs:text-base text-violet-400 hover:text-white transition-all duration-300 cursor-pointer">
+            Learn More
+            <IconArrowRight
+              size={14}
+              className="-rotate-45 transform transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-0"
+            />
+          </button>
+        </Link>
       </div>
     </motion.div>
   );

@@ -61,6 +61,7 @@ export const Feature = () => {
           {featureData.map((feature) => (
             <FeatureCard
               key={feature.id}
+              id={feature.id}
               icon={feature.icon}
               title={feature.title}
               description={feature.description}

@@ -1,8 +1,8 @@
 "use client";
 import { IconSearch } from "@tabler/icons-react";
+import Link from "next/link";
 import { useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
-import Link from "next/link";
 
 const categories = ["All", "Metaverse", "Gaming", "Defi", "NFT"];
 
@@ -120,14 +120,12 @@ const CoinTable = ({ data }) => {
                 </td>
                 <td className="pr-4">
                   <div className="flex justify-center">
-                    <button className="px-3 sm:px-4 py-2 bg-black border border-violet-950 hover:bg-violet-900/30 text-white rounded-sm text-xs sm:text-sm font-medium transition-colors cursor-pointer">
-                      <Link
-                        href={`/coin/example`}
-                        className="flex items-center gap-2"
-                      >
-                        <span>View</span>
-                      </Link>
-                    </button>
+                    <Link
+                      href={`/coin/detail/${coin.id}`}
+                      className="px-3 sm:px-4 py-2 bg-black border border-violet-950 hover:bg-violet-900/30 text-white rounded-sm text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+                    >
+                      View
+                    </Link>
                   </div>
                 </td>
               </tr>
