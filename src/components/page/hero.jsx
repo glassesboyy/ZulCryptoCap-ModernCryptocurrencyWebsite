@@ -9,7 +9,7 @@ export const Hero = () => {
       className="relative h-screen w-full flex items-center justify-center bg-black antialiased bg-grid-white overflow-hidden"
     >
       <Spotlight />
-      <div className="p-4 max-w-7xl mx-auto relative z-10 w-full">
+      <div className="p-4 max-w-6xl mx-auto relative z-10 w-full">
         <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-violet-950/50">
           Start and Build <br className="block md:hidden" />
           Your Crypto <br className="block md:hidden" />

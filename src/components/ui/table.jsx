@@ -21,12 +21,12 @@ const CoinTable = ({ data }) => {
   return (
     <div className="w-full">
       {/* Categories and Search */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
-        <div className="flex gap-3">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6 w-full">
+        <div className="flex flex-wrap gap-2 sm:gap-3 w-full sm:w-auto">
           {categories.map((category) => (
             <button
               key={category}
-              className={`px-4 py-2 rounded-full text-sm font-medium border border-violet-950 text-white hover:bg-violet-900/30 transition-colors cursor-pointer outline-none ${
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium border border-violet-950 text-white hover:bg-violet-900/30 transition-colors cursor-pointer outline-none flex-grow sm:flex-grow-0 ${
                 activeCategory === category
                   ? "bg-violet-900/30 border-violet-500"
                   : ""
@@ -37,7 +37,7 @@ const CoinTable = ({ data }) => {
             </button>
           ))}
         </div>
-        <div className="relative">
+        <div className="relative w-full sm:w-auto">
           <IconSearch
             className="absolute left-3 top-1/2 -translate-y-1/2 text-violet-400"
             size={20}
@@ -47,7 +47,7 @@ const CoinTable = ({ data }) => {
             placeholder="Search coin"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 pr-4 py-2 bg-violet-900/20 border border-violet-900/30 rounded-lg text-white focus:outline-none focus:border-violet-500"
+            className="w-full sm:w-[200px] pl-10 pr-4 py-2 bg-violet-900/20 border border-violet-900/30 rounded-lg text-white focus:outline-none focus:border-violet-500"
           />
         </div>
       </div>

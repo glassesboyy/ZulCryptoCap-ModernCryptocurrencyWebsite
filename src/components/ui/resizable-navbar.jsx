@@ -75,7 +75,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1 xs:space-x-2 text-xs xs:text-sm font-medium text-white/70 transition duration-1000 hover:text-white md:flex",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1 xs:space-x-2 text-md xs:text-sm font-medium text-white/70 transition duration-1000 hover:text-white md:flex",
         className
       )}
     >
@@ -115,7 +115,7 @@ export const MobileNav = ({ children, className, visible }) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-black/40 border border-violet-950/40 px-0 py-2 md:hidden",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-black/40 border border-violet-950/40 px-0 py-2 md:hidden rounded-2xl",
         visible && "bg-black/40",
         className
       )}
@@ -170,9 +170,16 @@ export const NavbarLogo = () => {
   return (
     <a
       href="#"
-      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-base font-semibold"
+      className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 group transition-all duration-300 ease-in-out"
     >
-      <span className="text-white">ZulCryptoCap</span>
+      <span className="text-white font-medium text-sm sm:text-base md:text-lg lg:text-xl">
+        <span className="text-violet-700 font-black group-hover:text-violet-500 transition-colors duration-300">
+          Zul
+        </span>
+        <span className="group-hover:text-violet-200 transition-colors duration-300">
+          CryptoCap
+        </span>
+      </span>
     </a>
   );
 };
@@ -186,7 +193,7 @@ export const NavbarButton = ({
   ...props
 }) => {
   const baseStyles =
-    "px-3 xs:px-4 py-1.5 xs:py-2 rounded-md text-xs xs:text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-3 xs:px-4 py-4 xs:py-4 rounded-xl text-base xs:text-base font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
     primary: "bg-white text-black hover:bg-gray-100",
