@@ -1,11 +1,12 @@
 import { RegisterForm } from "@/components/page/register-form";
+import Link from "next/link";
 
 export default function RegisterPage() {
   return (
     <div className="grid min-h-svh lg:grid-cols-2 bg-black">
       <div className="flex flex-col gap-4 p-6 md:p-10 bg-black/40">
         <div className="flex justify-center gap-2 md:justify-start">
-          <a
+          <Link
             href="/"
             className="flex items-center gap-2 font-medium text-white group transition-all duration-300 text-2xl"
           >
@@ -17,7 +18,7 @@ export default function RegisterPage() {
                 CryptoCap
               </span>
             </span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-1 items-center justify-center">
           <div className="w-full max-w-xs">

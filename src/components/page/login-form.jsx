@@ -1,11 +1,26 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function LoginForm({ className, ...props }) {
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push("/");
+  };
+
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form
+      onSubmit={handleSubmit}
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold text-white">Login to your account</h1>
         <p className="text-white/70 text-sm text-balance font-light">
@@ -30,12 +45,12 @@ export function LoginForm({ className, ...props }) {
             <Label htmlFor="password" className="text-white/90">
               Password
             </Label>
-            <a
+            <Link
               href="#"
               className="text-violet-400 text-sm hover:text-violet-300 transition-colors"
             >
               Forgot password?
-            </a>
+            </Link>
           </div>
           <Input
             id="password"
@@ -78,12 +93,12 @@ export function LoginForm({ className, ...props }) {
       </div>
       <div className="text-center text-white/70">
         Don&apos;t have an account?{" "}
-        <a
+        <Link
           href="/auth/register"
           className="text-violet-400 hover:text-violet-300 transition-colors"
         >
           Sign up
-        </a>
+        </Link>
       </div>
     </form>
   );

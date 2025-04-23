@@ -1,11 +1,26 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function RegisterForm({ className, ...props }) {
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push("/auth/login");
+  };
+
   return (
-    <form className={cn("flex flex-col gap-6", className)} {...props}>
+    <form
+      onSubmit={handleSubmit}
+      className={cn("flex flex-col gap-6", className)}
+      {...props}
+    >
       <div className="flex flex-col items-center gap-2 text-center">
         <h1 className="text-2xl font-bold text-white">Create an account</h1>
         <p className="text-white/70 text-sm text-balance font-light">
@@ -82,12 +97,12 @@ export function RegisterForm({ className, ...props }) {
       </div>
       <div className="text-center text-white/70">
         Already have an account?{" "}
-        <a
+        <Link
           href="/auth/login"
           className="text-violet-400 hover:text-violet-300 transition-colors"
         >
           Login
-        </a>
+        </Link>
       </div>
     </form>
   );
