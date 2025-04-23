@@ -2,6 +2,7 @@
 import { IconSearch } from "@tabler/icons-react";
 import { useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
+import Link from "next/link";
 
 const categories = ["All", "Metaverse", "Gaming", "Defi", "NFT"];
 
@@ -120,12 +121,12 @@ const CoinTable = ({ data }) => {
                 <td className="pr-4">
                   <div className="flex justify-center">
                     <button className="px-3 sm:px-4 py-2 bg-black border border-violet-950 hover:bg-violet-900/30 text-white rounded-sm text-xs sm:text-sm font-medium transition-colors cursor-pointer">
-                      <a
+                      <Link
                         href={`/coin/example`}
                         className="flex items-center gap-2"
                       >
                         <span>View</span>
-                      </a>
+                      </Link>
                     </button>
                   </div>
                 </td>
