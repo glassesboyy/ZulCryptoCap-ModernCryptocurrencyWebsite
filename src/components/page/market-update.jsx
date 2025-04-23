@@ -106,7 +106,7 @@ export function MarketUpdate() {
         {/* See All Button */}
         <div className="mt-6 xs:mt-8">
           <button className="group px-4 xs:px-6 py-2 xs:py-3 bg-black underline uppercase text-sm xs:text-base text-white hover:text-violet-400 rounded-lg font-medium transition-colors inline-flex items-center gap-1 cursor-pointer">
-            See All Coins
+            See All Market Update
             <IconArrowRight
               size={16}
               className="-rotate-45 transform transition-transform duration-300 group-hover:rotate-0"
