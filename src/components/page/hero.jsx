@@ -1,8 +1,15 @@
 "use client";
+import { useRouter } from "next/navigation";
 import CTAButton from "../ui/cta-button";
 import { Spotlight } from "../ui/spotlight-new";
 
 export const Hero = () => {
+  const router = useRouter();
+
+  const handleConnectWallet = () => {
+    router.push("/auth/register");
+  };
+
   return (
     <div
       id="home"
@@ -24,6 +31,7 @@ export const Hero = () => {
           <CTAButton
             buttonText="Connect to Wallet"
             className="text-sm xs:text-base sm:text-lg"
+            onClick={handleConnectWallet}
           />
         </div>
       </div>

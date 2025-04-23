@@ -71,6 +71,7 @@ const WalletIcon = () => (
 const CTAButton = ({
   buttonText = "Connect to Wallet",
   icon: Icon = WalletIcon,
+  onClick,
 }) => {
   const gradientStyle = {
     background: "linear-gradient(135deg, rgb(76, 29, 149), rgb(76, 29, 149))",
@@ -83,7 +84,10 @@ const CTAButton = ({
   };
 
   return (
-    <button className="cursor-pointer group relative bg-black rounded-full p-px overflow-hidden border border-white/20 hover:border-blue-900 transition-all duration-1000">
+    <button
+      onClick={onClick}
+      className="cursor-pointer group relative bg-black rounded-full p-px overflow-hidden border border-white/20 hover:border-blue-900 transition-all duration-1000"
+    >
       <span className="absolute inset-0 rounded-full overflow-hidden ">
         <span className="inset-0 absolute pointer-events-none select-none">
           <span
