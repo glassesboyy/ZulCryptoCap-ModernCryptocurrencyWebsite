@@ -6,33 +6,29 @@ import {
   MobileNavToggle,
   Navbar,
   NavbarButton,
-  NavbarLogo,
   NavBody,
   NavItems,
 } from "@/components/ui/resizable-navbar";
+import Link from "next/link";
 import { useState } from "react";
 
 export function MainNavbar() {
   const navItems = [
     {
       name: "Home",
-      link: "#home",
+      link: "/",
     },
     {
-      name: "Feature",
-      link: "#feature",
+      name: "About Us",
+      link: "/feature",
     },
     {
       name: "Market",
-      link: "#market",
-    },
-    {
-      name: "Faq",
-      link: "#faq",
+      link: "/coin",
     },
     {
       name: "News",
-      link: "#news",
+      link: "/news",
     },
   ];
 
@@ -43,8 +39,20 @@ export function MainNavbar() {
       <Navbar className="px-4 xs:px-6">
         {/* Desktop Navigation */}
         <NavBody>
-          <NavbarLogo />
-          <NavItems items={navItems} />
+          <Link
+            href="/"
+            className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 group transition-all duration-300 ease-in-out"
+          >
+            <span className="text-white font-medium text-sm sm:text-base md:text-lg lg:text-xl">
+              <span className="text-violet-700 font-black group-hover:text-violet-500 transition-colors duration-300">
+                Zul
+              </span>
+              <span className="group-hover:text-violet-200 transition-colors duration-300">
+                CryptoCap
+              </span>
+            </span>
+          </Link>
+          <NavItems items={navItems} as={Link} />
           <div className="flex items-center">
             <NavbarButton variant="dark">Connect to Wallet</NavbarButton>
           </div>
@@ -53,7 +61,19 @@ export function MainNavbar() {
         {/* Mobile Navigation */}
         <MobileNav>
           <MobileNavHeader className="px-4 xs:px-6">
-            <NavbarLogo />
+            <Link
+              href="/"
+              className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 group transition-all duration-300 ease-in-out"
+            >
+              <span className="text-white font-medium text-sm sm:text-base md:text-lg lg:text-xl">
+                <span className="text-violet-700 font-black group-hover:text-violet-500 transition-colors duration-300">
+                  Zul
+                </span>
+                <span className="group-hover:text-violet-200 transition-colors duration-300">
+                  CryptoCap
+                </span>
+              </span>
+            </Link>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -66,14 +86,14 @@ export function MainNavbar() {
             onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
-              <a
+              <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="relative text-white hover:text-violet-400 transition-colors"
               >
                 <span className="block">{item.name}</span>
-              </a>
+              </Link>
             ))}
             <div className="flex w-full flex-col gap-4 pt-4">
               <NavbarButton

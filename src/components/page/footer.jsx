@@ -83,7 +83,7 @@ export const Footer = () => {
         {/* Bottom Copyright */}
         <div className="mt-8 xs:mt-10 sm:mt-12 pt-6 xs:pt-8">
           <p className="text-xs xs:text-sm text-white/50">
-            © {new Date().getFullYear()} ZulCryptoCap. All rights reserved.
+            © 2025 ZulCryptoCap. All rights reserved.
           </p>
         </div>
       </div>

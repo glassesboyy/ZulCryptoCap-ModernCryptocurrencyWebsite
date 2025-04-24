@@ -83,7 +83,7 @@ export default function FeatureDetail({ params }) {
           className="inline-flex items-center text-violet-400 hover:text-white mb-8"
         >
           <IconArrowLeft className="mr-2" />
-          Back to Features
+          Back
         </Link>
 
         <div className="space-y-8">

@@ -943,7 +943,7 @@ const DetailCoinPage = ({ params }) => {
             className="inline-flex items-center gap-2 px-4 py-2 text-white/80 hover:text-white bg-violet-950/20 hover:bg-violet-900/30 rounded-lg transition-colors border border-violet-500/20"
           >
             <IconArrowLeft className="w-5 h-5" />
-            <span>Back to Market</span>
+            <span>Back</span>
           </Link>
         </div>
       </div>
@@ -998,7 +998,7 @@ const DetailCoinPage = ({ params }) => {
             className="w-full xs:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 text-sm xs:text-base text-white/80 hover:text-white bg-violet-950/20 hover:bg-violet-900/30 rounded-lg transition-colors border border-violet-500/20"
           >
             <IconArrowLeft className="w-4 h-4 xs:w-5 xs:h-5" />
-            <span>Back to Market</span>
+            <span>Back</span>
           </Link>
         </div>
 
