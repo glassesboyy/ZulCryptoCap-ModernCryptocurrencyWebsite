@@ -14,18 +14,22 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+import { useMemo } from "react";
 
-const generateHourlyData = () => {
+// Move data generation outside component to make it stable
+const generateStaticData = () => {
   const data = [];
-  const now = new Date();
-  // Generate data for the last 7 days (168 hours)
-  for (let i = 167; i >= 0; i--) {
-    const date = new Date(now.getTime() - i * 60 * 60 * 1000);
+  const baseDate = new Date("2024-01-01").getTime();
 
+  for (let i = 0; i < 168; i++) {
+    // 7 days * 24 hours
+    const date = new Date(baseDate + i * 60 * 60 * 1000);
+
+    // Use deterministic calculation instead of random
     const basePrice = 45000;
     const trend = Math.sin(i / 24) * 2000;
-    const random = (Math.random() - 0.5) * 10000;
-    const price = Math.round(basePrice + trend + random);
+    const variation = (Math.abs(((i * 157) % 100) - 50) / 50) * 1000;
+    const price = Math.round(basePrice + trend + variation);
 
     data.push({
       date: date.toISOString(),
@@ -35,7 +39,7 @@ const generateHourlyData = () => {
   return data;
 };
 
-const chartData = generateHourlyData();
+const staticChartData = generateStaticData();
 
 const chartConfig = {
   views: {
@@ -48,6 +52,9 @@ const chartConfig = {
 };
 
 export function Component() {
+  // Use useMemo to keep data consistent across renders
+  const chartData = useMemo(() => staticChartData, []);
+
   return (
     <Card className="bg-violet-950/20 border-violet-500/20">
       <CardHeader className="flex flex-col items-stretch space-y-0 border-b border-white/10 pb-4">
@@ -66,7 +73,6 @@ export function Component() {
           className="aspect-auto h-[250px] w-full text-white/60"
         >
           <LineChart
-            accessibilityLayer
             data={chartData}
             margin={{
               left: 12,
