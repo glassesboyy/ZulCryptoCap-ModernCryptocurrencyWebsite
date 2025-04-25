@@ -125,36 +125,6 @@ const employees = [
       img: "/team/employee-example.jpg",
     },
   ],
-  // Row 7 - Finance
-  [
-    {
-      name: "Olivia Martinez",
-      position: "Finance Analyst",
-      department: "Finance",
-      img: "/team/employee-example.jpg",
-    },
-    {
-      name: "Daniel Lee",
-      position: "Accountant",
-      department: "Finance",
-      img: "/team/employee-example.jpg",
-    },
-  ],
-  // Row 8 - Legal
-  [
-    {
-      name: "Nina Patel",
-      position: "Legal Advisor",
-      department: "Legal",
-      img: "/team/employee-example.jpg",
-    },
-    {
-      name: "Chris Evans",
-      position: "Compliance Officer",
-      department: "Legal",
-      img: "/team/employee-example.jpg",
-    },
-  ],
 ];
 
 export function WhoAreWe() {
