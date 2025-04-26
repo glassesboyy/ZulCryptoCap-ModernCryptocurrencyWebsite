@@ -5,7 +5,7 @@ export const EmployeeCard = ({ name, position, department, img }) => {
     <figure
       className={cn(
         "relative h-full w-48 cursor-pointer overflow-hidden rounded-xl border p-3",
-        "border-violet-950 bg-gradient-to-br from-violet-950/50 to-transparent hover:bg-violet-950/50",
+        "border-violet-950 bg-violet-950/20 hover:bg-violet-950/50",
         "transition-colors duration-300"
       )}
     >
@@ -21,10 +21,10 @@ export const EmployeeCard = ({ name, position, department, img }) => {
           <figcaption className="text-sm font-medium text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium text-violet-800">{position}</p>
+          <p className="text-xs font-normal text-violet-400">{position}</p>
         </div>
       </div>
-      <p className="mt-2 text-xs text-white/60">{department}</p>
+      <p className="mt-2 text-xs font-light text-white/60">{department}</p>
     </figure>
   );
 };
