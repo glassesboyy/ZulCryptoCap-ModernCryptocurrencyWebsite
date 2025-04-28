@@ -1,78 +1,12 @@
 "use client";
-
-import {
-  IconArrowLeft,
-  IconChartBar,
-  IconExchange,
-  IconShieldLock,
-  IconWallet,
-} from "@tabler/icons-react";
+import { getFeatureById } from "@/components/data/feature-data";
+import { IconArrowLeft } from "@tabler/icons-react";
 import Link from "next/link";
 import { use } from "react";
 
-const featureDetails = {
-  1: {
-    icon: IconWallet,
-    title: "Secure Wallet",
-    description:
-      "Store your crypto assets safely with our state-of-the-art digital wallet technology and advanced security measures.",
-    longDescription:
-      "Our secure wallet employs military-grade encryption and multi-signature technology to ensure your digital assets remain protected. With features like biometric authentication, hardware wallet integration, and real-time monitoring, you can rest assured that your cryptocurrencies are safe from unauthorized access.",
-    benefits: [
-      "Multi-layer security protocol",
-      "24/7 monitoring system",
-      "Instant access to your funds",
-      "Multiple currency support",
-    ],
-  },
-  2: {
-    icon: IconChartBar,
-    title: "Real-time Analytics",
-    description:
-      "Access detailed market analysis and real-time trading data to make informed investment decisions.",
-    longDescription:
-      "Our advanced analytics platform provides comprehensive market insights, price movements, and trading patterns in real-time. With customizable charts, technical indicators, and market sentiment analysis, you'll have all the tools needed to make informed trading decisions.",
-    benefits: [
-      "Live market data updates",
-      "Advanced technical analysis tools",
-      "Customizable dashboard",
-      "Historical data access",
-    ],
-  },
-  3: {
-    icon: IconShieldLock,
-    title: "Advanced Security",
-    description:
-      "Benefit from industry-leading security protocols and multi-factor authentication to protect your investments.",
-    longDescription:
-      "Our platform implements cutting-edge security measures including multi-factor authentication, cold storage solutions, and regular security audits to ensure your assets are protected against all types of threats. We maintain the highest standards of cybersecurity to give you peace of mind.",
-    benefits: [
-      "Multi-factor authentication",
-      "Cold storage solution",
-      "Regular security audits",
-      "Insurance coverage",
-    ],
-  },
-  4: {
-    icon: IconExchange,
-    title: "Instant Trading",
-    description:
-      "Execute trades instantly with our high-performance trading engine and low latency infrastructure.",
-    longDescription:
-      "Experience lightning-fast trade execution with our state-of-the-art trading engine. Our platform ensures minimal latency and maximum reliability, allowing you to capitalize on market opportunities instantly. With support for multiple order types and advanced trading features, you'll never miss a trading opportunity.",
-    benefits: [
-      "Low latency execution",
-      "Multiple order types",
-      "Advanced trading features",
-      "High liquidity pools",
-    ],
-  },
-};
-
 export default function FeatureDetail({ params }) {
   const { id } = use(params);
-
-  const feature = featureDetails[id];
+  const feature = getFeatureById(id);
   const Icon = feature.icon;
 
   return (

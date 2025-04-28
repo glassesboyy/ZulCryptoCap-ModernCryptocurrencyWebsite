@@ -232,7 +232,7 @@ export const Card = ({ card, index, layout = false }) => {
             {card.title}
           </motion.p>
         </div>
-        <BlurImage
+        <Image
           src={card.src}
           alt={card.title}
           fill
@@ -243,7 +243,7 @@ export const Card = ({ card, index, layout = false }) => {
   );
 };
 
-export const BlurImage = ({
+export const Image = ({
   height,
   width,
   src,
@@ -252,7 +252,7 @@ export const BlurImage = ({
   fill,
   ...rest
 }) => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true); // Fix: Properly destructure useState
 
   const imgStyle = {
     ...rest.style,
@@ -265,7 +265,7 @@ export const BlurImage = ({
     <img
       className={cn(
         "transition duration-300",
-        isLoading ? "blur-sm" : "blur-0",
+        isLoading ? "blur-sm" : "blur-0", // Add loading state effect
         className
       )}
       onLoad={() => setLoading(false)}

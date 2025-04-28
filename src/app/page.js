@@ -15,7 +15,7 @@ export default function Home() {
       <MarketTrend />
       <Tutorial />
       <Faq />
-      <NewsSection showButton={true} />
+      <NewsSection maxItems={7} showButton={true} />
     </main>
   );
 }

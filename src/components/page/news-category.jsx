@@ -1,47 +1,35 @@
 "use client";
+import { getCategories, newsData } from "@/components/data/news-data";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { cn } from "@/lib/utils";
+import { IconNews } from "@tabler/icons-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-const categories = [
-  { id: "all", label: "All News" },
-  {
-    id: "bitcoin",
-    label: "Bitcoin",
-    color: "from-orange-400/10 to-orange-600/10",
-  },
-  {
-    id: "ethereum",
-    label: "Ethereum",
-    color: "from-blue-400/10 to-blue-600/10",
-  },
-  {
-    id: "altcoin",
-    label: "Altcoin",
-    color: "from-green-400/10 to-green-600/10",
-  },
-  { id: "defi", label: "DeFi", color: "from-purple-400/10 to-purple-600/10" },
-  { id: "nft", label: "NFT", color: "from-pink-400/10 to-pink-600/10" },
-  {
-    id: "exchange",
-    label: "Exchange",
-    color: "from-yellow-400/10 to-yellow-600/10",
-  },
-  {
-    id: "regulations",
-    label: "Regulations",
-    color: "from-red-400/10 to-red-600/10",
-  },
-  {
-    id: "market",
-    label: "Market Analysis",
-    color: "from-cyan-400/10 to-cyan-600/10",
-  },
-];
+const NewsImage = ({ imagePath }) => (
+  <div className="w-full h-full rounded-xl overflow-hidden">
+    <img
+      src={imagePath}
+      alt="Crypto News"
+      className="w-full h-full object-cover transition-all duration-500 group-hover/bento:scale-110"
+    />
+  </div>
+);
 
 export function NewsCategory() {
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [isOpen, setIsOpen] = useState(false);
+  const categories = getCategories();
+
+  // Filter news based on selected category
+  const filteredNews =
+    selectedCategory === "all"
+      ? newsData
+      : newsData.filter((news) =>
+          news.categories.some(
+            (cat) => cat.toLowerCase().replace(/\s+/g, "-") === selectedCategory
+          )
+        );
 
   return (
     <section className="w-full bg-black py-20">
@@ -135,42 +123,54 @@ export function NewsCategory() {
           )}
         </div>
 
-        {/* Category Description Card */}
+        {/* News Grid */}
         <motion.div
           layout
-          className="bg-violet-950/20 rounded-2xl p-8 border border-violet-500/20"
+          className="mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
         >
-          <div className="text-center">
-            <motion.p
-              key={selectedCategory}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-white/70"
-            >
-              {getDescriptionForCategory(selectedCategory)}
-            </motion.p>
-          </div>
+          <BentoGrid className="grid-cols-1 md:grid-cols-3 auto-rows-[20rem]">
+            {filteredNews.map((news, i) => (
+              <BentoGridItem
+                key={news.id}
+                title={news.title}
+                description={news.description}
+                header={<NewsImage imagePath={news.src} />}
+                className="md:col-span-1"
+                icon={<IconNews className="h-4 w-4 text-violet-400" />}
+              />
+            ))}
+          </BentoGrid>
+
+          {filteredNews.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-white/70">No news found for this category.</p>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
   );
 }
 
+// Move descriptions object outside component for better performance
+const descriptions = {
+  all: "Stay updated with the latest news from across the entire cryptocurrency ecosystem.",
+  bitcoin:
+    "Follow Bitcoin's price movements, adoption trends, and technological developments.",
+  ethereum: "Track Ethereum updates, DApp developments, and ecosystem growth.",
+  altcoin:
+    "Discover emerging cryptocurrencies and alternative blockchain projects.",
+  defi: "Explore decentralized finance protocols, yields, and innovative financial products.",
+  nft: "Keep up with NFT trends, collections, and marketplace developments.",
+  exchange: "Monitor exchange updates, listings, and trading platform news.",
+  regulations:
+    "Stay informed about crypto regulations and policy changes worldwide.",
+  "market-analysis":
+    "Access in-depth market analysis, trends, and trading insights.",
+};
+
 function getDescriptionForCategory(categoryId) {
-  const descriptions = {
-    all: "Stay updated with the latest news from across the entire cryptocurrency ecosystem.",
-    bitcoin:
-      "Follow Bitcoin's price movements, adoption trends, and technological developments.",
-    ethereum:
-      "Track Ethereum updates, DApp developments, and ecosystem growth.",
-    altcoin:
-      "Discover emerging cryptocurrencies and alternative blockchain projects.",
-    defi: "Explore decentralized finance protocols, yields, and innovative financial products.",
-    nft: "Keep up with NFT trends, collections, and marketplace developments.",
-    exchange: "Monitor exchange updates, listings, and trading platform news.",
-    regulations:
-      "Stay informed about crypto regulations and policy changes worldwide.",
-    market: "Access in-depth market analysis, trends, and trading insights.",
-  };
   return descriptions[categoryId] || descriptions.all;
 }
