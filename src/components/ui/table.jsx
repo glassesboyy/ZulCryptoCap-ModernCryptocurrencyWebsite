@@ -1,12 +1,12 @@
 "use client";
+import { getCategories } from "@/components/data/coin-data";
 import { IconSearch } from "@tabler/icons-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 
-const categories = ["All", "Metaverse", "Gaming", "Defi", "NFT"];
-
 const CoinTable = ({ data }) => {
+  const categories = getCategories();
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchTerm, setSearchTerm] = useState("");
 
