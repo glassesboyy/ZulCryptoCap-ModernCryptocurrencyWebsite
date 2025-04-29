@@ -91,7 +91,7 @@ const CoinTable = ({ data }) => {
                   </div>
                 </td>
                 <td className="hidden sm:table-cell text-center text-white">
-                  ${coin.price}
+                  ${coin.currentPrice}
                 </td>
                 <td
                   className={`hidden sm:table-cell text-center ${

@@ -9,15 +9,26 @@ const CoinCard = ({
   logo,
   symbol,
   name,
-  price,
+  currentPrice,
   priceChange,
-  volume,
+  volume24h,
   marketCap,
   sparklineData = [23, 21, 24, 20, 25, 22, 27, 24, 23, 25, 28, 26],
 }) => {
   const isPositive = priceChange >= 0;
 
-  const formatNumber = (number) => {
+  const formatNumber = (value) => {
+    // Handle string values that contain letters (like "1.02T" or "45.2B")
+    if (typeof value === "string") {
+      return value;
+    }
+
+    // Handle number values or convert string numbers to actual numbers
+    const number = Number(value);
+    if (isNaN(number)) {
+      return "0";
+    }
+
     return number.toLocaleString("en-US", {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
@@ -52,9 +63,11 @@ const CoinCard = ({
         </div>
 
         {/* Price section with sparkline */}
-        <div className="mt-6  cursor-pointer">
+        <div className="mt-6 cursor-pointer">
           <div className="flex items-baseline gap-2">
-            <span className="text-2xl font-bold text-white">${price}</span>
+            <span className="text-2xl font-bold text-white">
+              ${currentPrice}
+            </span>
             <span
               className={`flex items-center text-sm font-medium ${
                 isPositive ? "text-green-500" : "text-red-500"
@@ -72,7 +85,8 @@ const CoinCard = ({
                 style={{
                   strokeWidth: 1.5,
                   stroke: isPositive ? "#22c55e" : "#ef4444",
-                  fill: isPositive ? "#22c55e" : "#ef4444",
+                  fill: "none",
+                  fillOpacity: "0.1",
                 }}
               />
             </Sparklines>
@@ -83,15 +97,11 @@ const CoinCard = ({
         <div className="mt-6 grid grid-cols-2 gap-4 pt-10 md:pt-6 lg:pt-4 cursor-pointer">
           <div>
             <p className="text-sm text-violet-300">Volume 24h</p>
-            <p className="text-base font-semibold text-white">
-              ${formatNumber(volume)}
-            </p>
+            <p className="text-base font-semibold text-white">${volume24h}</p>
           </div>
           <div>
             <p className="text-sm text-violet-300">Market Cap</p>
-            <p className="text-base font-semibold text-white">
-              ${formatNumber(marketCap)}
-            </p>
+            <p className="text-base font-semibold text-white">${marketCap}</p>
           </div>
         </div>
       </motion.div>
