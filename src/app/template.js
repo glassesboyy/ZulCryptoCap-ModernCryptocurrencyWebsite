@@ -12,7 +12,8 @@ export default function Template({ children }) {
   useEffect(() => {
     const isDetailPage =
       pathname.startsWith("/coin/detail/") ||
-      pathname.startsWith("/feature/detail/");
+      pathname.startsWith("/feature/detail/") ||
+      pathname.startsWith("/news/detail/");
     setShowNav(!isDetailPage);
   }, [pathname]);
 

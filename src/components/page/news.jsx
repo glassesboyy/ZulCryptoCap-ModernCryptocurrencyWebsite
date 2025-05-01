@@ -1,6 +1,7 @@
-import { IconArrowRight, IconNews } from "@tabler/icons-react";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { getLatestNews } from "@/components/data/news-data";
+import { IconArrowRight, IconNews } from "@tabler/icons-react";
+import Link from "next/link";
+import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 
 const NewsImage = ({ imagePath }) => (
   <div className="w-full h-full rounded-xl overflow-hidden">
@@ -13,14 +14,7 @@ const NewsImage = ({ imagePath }) => (
 );
 
 export function NewsSection({ showButton = true, maxItems = 7 }) {
-  const newsItems = getLatestNews(maxItems).map((item) => ({
-    title: item.title,
-    description: item.description,
-    header: <NewsImage imagePath={item.src} />,
-    className:
-      item.id === 1 || item.id === 7 ? "md:col-span-2" : "md:col-span-1",
-    icon: <IconNews className="h-4 w-4 text-violet-400" />,
-  }));
+  const newsItems = getLatestNews(maxItems);
 
   return (
     <div id="news" className="w-full">
@@ -36,27 +30,35 @@ export function NewsSection({ showButton = true, maxItems = 7 }) {
         </div>
 
         <BentoGrid className="max-w-7xl mx-auto md:auto-rows-[20rem]">
-          {newsItems.map((item, i) => (
+          {newsItems.map((item) => (
             <BentoGridItem
-              key={i}
+              key={item.id}
               title={item.title}
               description={item.description}
-              header={item.header}
-              className={item.className}
-              icon={item.icon}
+              header={<NewsImage imagePath={item.imageUrl} />}
+              className={
+                item.id === "1" || item.id === "7"
+                  ? "md:col-span-2"
+                  : "md:col-span-1"
+              }
+              icon={<IconNews className="h-4 w-4 text-violet-400" />}
+              newsId={item.id}
             />
           ))}
         </BentoGrid>
 
         {showButton && (
           <div className="mt-6 xs:mt-8 sm:mt-10 text-center">
-            <button className="group px-4 xs:px-6 py-2 xs:py-3 bg-black underline uppercase text-sm xs:text-base text-white hover:text-violet-400 rounded-lg font-medium transition-colors inline-flex items-center gap-1 cursor-pointer">
+            <Link
+              href="/news"
+              className="group px-4 xs:px-6 py-2 xs:py-3 bg-black underline uppercase text-sm xs:text-base text-white hover:text-violet-400 rounded-lg font-medium transition-colors inline-flex items-center gap-1"
+            >
               See All News & Article
               <IconArrowRight
                 size={18}
                 className="-rotate-45 transform transition-transform duration-300 group-hover:rotate-0"
               />
-            </button>
+            </Link>
           </div>
         )}
       </div>

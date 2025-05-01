@@ -187,31 +187,21 @@ export const Card = ({ card, index, layout = false }) => {
               exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-black p-4 font-sans md:p-10 border border-violet-500/20"
+              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-4xl bg-black p-4 font-sans md:p-10 border border-violet-500/20"
             >
               <button
-                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
+                className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black"
                 onClick={handleClose}
               >
-                <IconX className="h-6 w-6 text-neutral-100 dark:text-neutral-900" />
+                <IconX className="h-6 w-6 text-white" />
               </button>
-              <motion.p
-                layoutId={layout ? `category-${card.title}` : undefined}
-                className="text-base font-medium text-violet-400"
-              >
-                {card.category}
-              </motion.p>
-              <motion.p
-                layoutId={layout ? `title-${card.title}` : undefined}
-                className="mt-4 text-2xl font-semibold text-white md:text-5xl"
-              >
-                {card.title}
-              </motion.p>
-              <div className="py-10">{card.content}</div>
+              {card.content}
             </motion.div>
           </div>
         )}
       </AnimatePresence>
+
+      {/* Preview Card */}
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
@@ -219,25 +209,20 @@ export const Card = ({ card, index, layout = false }) => {
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
         <div className="relative z-40 p-8">
-          <motion.p
-            layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
-          >
+          <motion.p className="text-left font-sans text-sm font-medium text-white md:text-base">
             {card.category}
           </motion.p>
-          <motion.p
-            layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
-          >
+          <motion.p className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl">
             {card.title}
           </motion.p>
         </div>
-        <Image
-          src={card.src}
-          alt={card.title}
-          fill
-          className="absolute inset-0 z-10 object-cover"
-        />
+        <div className="absolute inset-0 z-10">
+          <img
+            src={card.imageUrl}
+            alt={card.title}
+            className="h-full w-full object-cover"
+          />
+        </div>
       </motion.button>
     </>
   );
