@@ -2,7 +2,7 @@
 
 import { newsData } from "@/components/data/news-data";
 import { ShareButtons } from "@/components/ui/share-buttons";
-import { IconArrowLeft, IconDatabase, IconEye } from "@tabler/icons-react";
+import { IconArrowLeft, IconEye, IconNews } from "@tabler/icons-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -115,17 +115,14 @@ export function NewsDetailClient({ id }) {
           </div>
 
           {/* Content */}
-          <div className="prose prose-invert prose-lg max-w-none mb-12">
-            <p className="text-xl text-white/80 leading-relaxed mb-8">
-              {news.content}
-            </p>
+          <div className="prose prose-invert prose-lg max-w-none mb-12 text-justify">
+            <p className="text-xl text-white/80 mb-8">{news.content}</p>
             <div className="my-8 p-6 bg-violet-950/20 rounded-xl">
-              <p className="text-lg italic text-white/70">
-                "This is a highlighted quote from the article that emphasizes an
-                important point or statement."
+              <p className="text-lg font-medium italic text-white/70">
+                {news.highlight}
               </p>
             </div>
-            <p className="text-white/80">{news.content}</p>
+            <p className="text-white/80 text-xl">{news.contentExpand}</p>
           </div>
 
           {/* Source & Share */}
@@ -138,7 +135,7 @@ export function NewsDetailClient({ id }) {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-violet-400 hover:text-violet-300"
             >
-              <IconDatabase size={20} />
+              <IconNews size={20} />
               <span>Source: {news.sourceName}</span>
             </a>
             <ShareButtons title={news.title} />
