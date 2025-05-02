@@ -1,5 +1,6 @@
 import { AllNews } from "@/components/page/all-news";
 import { HeroNews } from "@/components/page/hero-news";
+import { Newsletter } from "@/components/page/newsletter";
 import { TopTrendingNews } from "@/components/page/top-trending-news";
 
 export default function NewsPage() {
@@ -8,6 +9,7 @@ export default function NewsPage() {
       <HeroNews />
       <TopTrendingNews />
       <AllNews />
+      <Newsletter />
     </main>
   );
 }
