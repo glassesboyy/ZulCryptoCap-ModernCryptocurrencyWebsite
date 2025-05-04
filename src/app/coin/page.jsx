@@ -1,9 +1,10 @@
+import { HeroMarket } from "@/components/page/market-page/hero-market";
+
 export default function CoinPage() {
   return (
     <main className="min-h-screen bg-black">
-      <div className="max-w-7xl mx-auto px-4 py-16 bg-black">
-        <h1 className="text-4xl font-bold text-white mb-8">MarketPage</h1>
-      </div>
+      <HeroMarket />
+      {/* Other market sections will go here */}
     </main>
   );
 }

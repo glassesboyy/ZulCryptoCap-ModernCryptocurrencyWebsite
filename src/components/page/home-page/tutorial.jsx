@@ -1,6 +1,6 @@
 "use client";
-import CTAButton from "../ui/cta-button";
-import { StickyScroll } from "../ui/sticky-scroll-reveal";
+import CTAButton from "../../ui/cta-button";
+import { StickyScroll } from "../../ui/sticky-scroll-reveal";
 
 const tutorialContent = [
   {

@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import CTAButton from "../ui/cta-button";
-import { Spotlight } from "../ui/spotlight-new";
+import CTAButton from "../../ui/cta-button";
+import { Spotlight } from "../../ui/spotlight-new";
 
 export const Hero = () => {
   const router = useRouter();

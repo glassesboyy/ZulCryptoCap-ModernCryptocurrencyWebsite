@@ -1,7 +1,7 @@
 "use client";
 import { getMarketUpdates } from "@/components/data/coin-data";
 import { IconArrowRight } from "@tabler/icons-react";
-import CoinTable from "../ui/table";
+import CoinTable from "../../ui/table";
 
 export function MarketUpdate() {
   const coins = getMarketUpdates();

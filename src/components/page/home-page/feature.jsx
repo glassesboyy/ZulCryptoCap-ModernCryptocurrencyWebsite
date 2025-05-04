@@ -1,7 +1,7 @@
 "use client";
 import { getFeatureItems } from "@/components/data/feature-data";
-import CTASection from "../ui/cta-section";
-import FeatureCard from "../ui/feature-card";
+import CTASection from "../../ui/cta-section";
+import FeatureCard from "../../ui/feature-card";
 
 export const Feature = () => {
   const features = getFeatureItems();

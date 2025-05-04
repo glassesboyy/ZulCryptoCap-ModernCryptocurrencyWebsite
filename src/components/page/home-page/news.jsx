@@ -1,7 +1,7 @@
 import { getLatestNews } from "@/components/data/news-data";
 import { IconArrowRight, IconNews } from "@tabler/icons-react";
 import Link from "next/link";
-import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
+import { BentoGrid, BentoGridItem } from "../../ui/bento-grid";
 
 const NewsImage = ({ imagePath }) => (
   <div className="w-full h-full rounded-xl overflow-hidden">

@@ -1,6 +1,6 @@
 "use client";
 import { getTopMovers } from "@/components/data/coin-data";
-import CoinCard from "../ui/coin-card";
+import CoinCard from "../../ui/coin-card";
 
 export function MarketTrend() {
   const coins = getTopMovers();

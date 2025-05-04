@@ -1,9 +1,9 @@
-import { FeatureExpand } from "@/components/page/feature-expand";
-import { HeroAbout } from "@/components/page/hero-about";
-import { OurMissionVision } from "@/components/page/our-mission-vision";
-import { Partner } from "@/components/page/partner";
-import { WhereAreWe } from "@/components/page/where-are-we";
-import { WhoAreWe } from "@/components/page/who-are-we";
+import { HeroAbout } from "@/components/page/aboutus-page/hero-about";
+import { FeatureExpand } from "@/components/page/aboutus-page/feature-expand";
+import { OurMissionVision } from "@/components/page/aboutus-page/our-mission-vision";
+import { Partner } from "@/components/page/aboutus-page/partner";
+import { WhereAreWe } from "@/components/page/aboutus-page/where-are-we";
+import { WhoAreWe } from "@/components/page/aboutus-page/who-are-we";
 
 export default function FeaturePage() {
   return (
