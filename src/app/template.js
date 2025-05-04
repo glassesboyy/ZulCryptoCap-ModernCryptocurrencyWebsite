@@ -13,7 +13,13 @@ export default function Template({ children }) {
     const isDetailPage =
       pathname.startsWith("/coin/detail/") ||
       pathname.startsWith("/feature/detail/") ||
-      pathname.startsWith("/news/detail/");
+      pathname.startsWith("/news/detail/") ||
+      pathname.startsWith("/coin/trending") ||
+      pathname.startsWith("/coin/gainers") ||
+      pathname.startsWith("/coin/losers") ||
+      pathname.startsWith("/coin/popular") ||
+      pathname.startsWith("/coin/hot-pairs");
+
     setShowNav(!isDetailPage);
   }, [pathname]);
 
