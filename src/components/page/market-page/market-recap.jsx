@@ -26,10 +26,15 @@ export function MarketRecap() {
 
   return (
     <div className="w-full bg-black px-4 xs:px-6 py-12 xs:py-16">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl xs:text-4xl font-bold text-white mb-8">
-          Market Recap
-        </h2>
+      <div className="max-w-7xl mx-auto ">
+        <div className="mb-8 xs:mb-10 sm:mb-12">
+          <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 xs:mb-4">
+            Market Recap
+          </h2>
+          <p className="text-white/70 text-base xs:text-lg font-light">
+            Cryptocurrency market price updates in real-time
+          </p>
+        </div>
 
         {/* Changed grid-cols-3 to grid-cols-2 for xl breakpoint */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
