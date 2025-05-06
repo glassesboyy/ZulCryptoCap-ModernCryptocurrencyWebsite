@@ -18,6 +18,8 @@ export default function Template({ children }) {
       pathname.startsWith("/coin/gainers") ||
       pathname.startsWith("/coin/losers") ||
       pathname.startsWith("/coin/popular") ||
+      pathname.startsWith("/auth/login") ||
+      pathname.startsWith("/auth/register") ||
       pathname.startsWith("/coin/hot-pairs");
 
     setShowNav(!isDetailPage);

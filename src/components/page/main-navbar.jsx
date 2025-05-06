@@ -10,9 +10,11 @@ import {
   NavItems,
 } from "@/components/ui/resizable-navbar";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export function MainNavbar() {
+  const router = useRouter();
   const navItems = [
     {
       name: "Home",
@@ -34,6 +36,10 @@ export function MainNavbar() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  const handleConnectWallet = () => {
+    router.push("/auth/register");
+  };
+
   return (
     <div className="relative w-full">
       <Navbar className="px-4 xs:px-6">
@@ -54,7 +60,9 @@ export function MainNavbar() {
           </Link>
           <NavItems items={navItems} as={Link} />
           <div className="flex items-center">
-            <NavbarButton variant="dark">Connect to Wallet</NavbarButton>
+            <NavbarButton variant="dark" onClick={handleConnectWallet}>
+              Connect to Wallet
+            </NavbarButton>
           </div>
         </NavBody>
 
@@ -97,7 +105,10 @@ export function MainNavbar() {
             ))}
             <div className="flex w-full flex-col gap-4 pt-4">
               <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  handleConnectWallet();
+                }}
                 variant="dark"
                 className="w-full"
               >
