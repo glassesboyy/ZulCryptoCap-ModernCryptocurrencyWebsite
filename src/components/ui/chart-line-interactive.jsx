@@ -28,7 +28,7 @@ const generateStaticData = () => {
     // Use deterministic calculation instead of random
     const basePrice = 45000;
     const trend = Math.sin(i / 24) * 2000;
-    const variation = (Math.abs(((i * 157) % 100) - 50) / 50) * 100000;
+    const variation = (Math.abs(((i * 157) % 100) - 50) / 50) * 1000;
     const price = Math.round(basePrice + trend + variation);
 
     data.push({

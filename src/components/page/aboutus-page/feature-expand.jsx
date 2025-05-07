@@ -99,8 +99,12 @@ export function FeatureExpand() {
               </ul>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-xl p-8 flex items-center justify-center bg-gradient-to-b from-violet-500/10 to-violet-900/20">
-                <IconComponent className="w-32 h-32 text-violet-400" />
+              <div className="aspect-square rounded-xl p-2 flex items-center justify-center bg-gradient-to-b from-violet-500/10 to-violet-900/20 hover:bg-violet-500/20 transition-all duration-700">
+                <img
+                  src={featureData[activeFeature].image}
+                  alt={featureData[activeFeature].title}
+                  className="w-full h-full object-cover rounded-lg"
+                />
               </div>
               <div className="absolute -inset-4 bg-gradient-to-r from-transparent via-violet-500/5 to-transparent blur-3xl -z-10" />
             </div>

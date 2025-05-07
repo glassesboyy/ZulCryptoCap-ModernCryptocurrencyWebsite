@@ -59,8 +59,8 @@ export const NavBody = ({ children, className, visible }) => {
         minWidth: "min(800px, 90vw)",
       }}
       className={cn(
-        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-2xl bg-black/40 border border-violet-900/30 px-4 xs:px-6 py-2.5 md:flex",
-        visible && "bg-black/80 border-violet-900/30",
+        "relative z-[60] mx-auto hidden w-full max-w-7xl flex-row items-center justify-between self-start rounded-md bg-black/40 border border-violet-900/60 px-4  py-2.5 md:flex",
+        visible && "bg-black/80 border-violet-900/50",
         className
       )}
     >
@@ -76,7 +76,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1 xs:space-x-2 text-md xs:text-sm font-medium text-white/70 transition duration-1000 hover:text-white md:flex",
+        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-1  text-md  font-normal text-white/70 transition duration-1000 hover:text-white md:flex",
         className
       )}
     >
@@ -91,7 +91,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
           {hovered === idx && (
             <motion.div
               layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-violet-900/30"
+              className="absolute inset-0 h-full w-full rounded-md bg-violet-900/30"
             />
           )}
           <span className="relative z-20">{item.name}</span>
@@ -116,8 +116,8 @@ export const MobileNav = ({ children, className, visible }) => {
         damping: 50,
       }}
       className={cn(
-        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between bg-black/40 border border-violet-950/40 px-0 py-2 md:hidden rounded-2xl",
-        visible && "bg-black/40",
+        "relative z-50 mx-auto flex w-full max-w-[calc(100vw-2rem)] flex-col items-center justify-between  bg-black/40 border border-violet-900/60 px-0 py-2 md:hidden rounded-md",
+        visible && "bg-black/40 border-violet-900/50",
         className
       )}
     >
@@ -130,7 +130,7 @@ export const MobileNavHeader = ({ children, className }) => {
   return (
     <div
       className={cn(
-        "flex w-full flex-row items-center justify-between px-6 py-2 rounded-full",
+        "flex w-full flex-row items-center justify-between px-6 py-2 rounded-md",
         className
       )}
     >
@@ -148,7 +148,7 @@ export const MobileNavMenu = ({ children, className, isOpen }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-17 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-2xl bg-black px-6 py-8 border border-violet-900/30",
+            "absolute inset-x-0 top-17 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-md bg-black px-6 py-8 border border-violet-900/60",
             className
           )}
         >
@@ -194,14 +194,10 @@ export const NavbarButton = ({
   ...props
 }) => {
   const baseStyles =
-    "px-3 xs:px-4 py-4 xs:py-4 rounded-xl text-base xs:text-base font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-3 py-3 rounded-sm text-base font-medium relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
 
   const variantStyles = {
-    primary: "bg-white text-black hover:bg-gray-100",
-    secondary:
-      "bg-transparent border border-white/20 text-white hover:bg-white/10",
-    dark: "bg-black text-white border border-violet-950/50 hover:bg-violet-900/50 hover:text-white",
-    gradient: "bg-white text-black hover:bg-gray-100",
+    dark: "bg-black text-white border border-violet-900/50 hover:bg-violet-900/50 hover:text-white",
   };
 
   return (

@@ -39,6 +39,7 @@ export const featureData = [
     ],
     color: "blue",
     gradient: "from-blue-500/20 to-cyan-500/20",
+    image: "/news/news1.jpg",
   },
   {
     id: 2,
@@ -69,6 +70,7 @@ export const featureData = [
     ],
     color: "emerald",
     gradient: "from-emerald-500/20 to-green-500/20",
+    image: "/news/news2.jpg",
   },
   {
     id: 3,
@@ -99,6 +101,7 @@ export const featureData = [
     ],
     color: "orange",
     gradient: "from-orange-500/20 to-yellow-500/20",
+    image: "/news/news3.jpg",
   },
   {
     id: 4,
@@ -129,6 +132,7 @@ export const featureData = [
     ],
     color: "teal",
     gradient: "from-teal-500/20 to-cyan-500/20",
+    image: "/news/news4.jpg",
   },
   {
     id: 5,
@@ -159,6 +163,7 @@ export const featureData = [
     ],
     color: "indigo",
     gradient: "from-indigo-500/20 to-purple-500/20",
+    image: "/news/news5.jpg",
   },
   {
     id: 6,
@@ -189,6 +194,7 @@ export const featureData = [
     ],
     color: "rose",
     gradient: "from-rose-500/20 to-pink-500/20",
+    image: "/news/news6.jpg",
   },
   {
     id: 7,
@@ -219,6 +225,7 @@ export const featureData = [
     ],
     color: "yellow",
     gradient: "from-yellow-500/20 to-amber-500/20",
+    image: "/news/news7.jpg",
   },
   {
     id: 8,
@@ -249,6 +256,7 @@ export const featureData = [
     ],
     color: "fuchsia",
     gradient: "from-fuchsia-500/20 to-pink-500/20",
+    image: "/news/news1.jpg",
   },
 ];
 

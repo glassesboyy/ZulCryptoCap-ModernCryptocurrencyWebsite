@@ -161,7 +161,7 @@ const TableExpand = ({ data }) => {
                 <th className="sticky left-0 bg-black text-left pl-4 py-4 font-medium">
                   #
                 </th>
-                <th className="sticky left-[60px] bg-black text-left font-medium min-w-[200px]">
+                <th className="sticky pl-[60px] left-0 bg-black text-left font-medium min-w-[200px]">
                   Name
                 </th>
                 <th
@@ -232,10 +232,10 @@ const TableExpand = ({ data }) => {
                   key={coin.id}
                   className="bg-black/40 backdrop-blur-md border-b border-violet-900/30 hover:bg-violet-900/10 transition-colors"
                 >
-                  <td className="sticky left-0 bg-black/40 pl-4 py-4 text-white">
+                  <td className="sticky left-0 bg-black pl-4 py-4 text-white">
                     {index + 1}
                   </td>
-                  <td className="sticky left-[60px] bg-black/40">
+                  <td className="sticky pl-[60px] left-0 bg-black">
                     <div className="flex items-center gap-3">
                       <img
                         src={coin.logo}
