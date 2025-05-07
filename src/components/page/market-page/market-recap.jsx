@@ -25,7 +25,10 @@ export function MarketRecap() {
   );
 
   return (
-    <div className="w-full bg-black px-4 xs:px-6 py-12 xs:py-16">
+    <div
+      id="marketrecap"
+      className="w-full bg-black px-4 xs:px-6 py-12 xs:py-16"
+    >
       <div className="max-w-7xl mx-auto ">
         <div className="mb-8 xs:mb-10 sm:mb-12">
           <h2 className="text-3xl xs:text-4xl sm:text-5xl font-bold text-white mb-3 xs:mb-4">

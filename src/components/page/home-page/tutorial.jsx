@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import CTAButton from "../../ui/cta-button";
 import { StickyScroll } from "../../ui/sticky-scroll-reveal";
 
@@ -54,6 +55,12 @@ const tutorialContent = [
 ];
 
 export function Tutorial() {
+  const router = useRouter();
+
+  const handleConnectWallet = () => {
+    router.push("/auth/register");
+  };
+
   return (
     <section className="py-12 xs:py-16 sm:py-20 bg-black">
       <div className="container max-w-7xl mx-auto px-4 xs:px-6">
@@ -70,6 +77,7 @@ export function Tutorial() {
           <CTAButton
             buttonText="Connect to Wallet Now!"
             className="text-sm xs:text-base"
+            onClick={handleConnectWallet}
           />
         </div>
         <StickyScroll content={tutorialContent} />

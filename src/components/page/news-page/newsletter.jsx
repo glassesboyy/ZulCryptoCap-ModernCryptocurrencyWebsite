@@ -20,15 +20,15 @@ export function Newsletter() {
           whileInView={{ opacity: 1 }}
           className="absolute inset-0 overflow-hidden pointer-events-none"
         >
-          <div className="absolute top-1/4 -left-12 w-24 h-24 bg-violet-500/10 rounded-full blur-xl" />
-          <div className="absolute bottom-1/4 -right-12 w-32 h-32 bg-violet-500/10 rounded-full blur-xl" />
+          <div className="absolute top-1/4 -left-12 w-24 h-24 bg-violet-900/10 rounded-full blur-xl" />
+          <div className="absolute bottom-1/4 -right-12 w-32 h-32 bg-violet-900/10 rounded-full blur-xl" />
         </motion.div>
 
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-950/40 via-violet-900/20 to-black border border-violet-500/20 backdrop-blur-md p-8 md:p-12">
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-violet-950/60 via-violet-950/40 to-black border border-violet-800/20 backdrop-blur-md p-8 md:p-12">
           {/* Enhanced Background */}
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-500/10 via-violet-900/10 to-black/50" />
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-violet-950/10 to-black/70" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
           </div>
 
           {/* Content */}
@@ -57,7 +57,7 @@ export function Newsletter() {
                 {/* Free Plan */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="group p-6 rounded-xl bg-gradient-to-br from-white/5 to-white/0 border border-violet-500/20 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-300 flex flex-col justify-between"
+                  className="group p-6 rounded-xl bg-gradient-to-br from-white/5 to-black/40 border border-violet-800/20 backdrop-blur-sm hover:border-violet-700/40 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -83,7 +83,7 @@ export function Newsletter() {
                 {/* Starter Plan */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="group p-6 rounded-xl bg-gradient-to-br from-violet-500/10 to-violet-900/10 border border-violet-500/20 backdrop-blur-sm hover:border-violet-500/40 transition-all duration-300 flex flex-col justify-between"
+                  className="group p-6 rounded-xl bg-gradient-to-br from-violet-900/10 to-violet-950/10 border border-violet-800/20 backdrop-blur-sm hover:border-violet-700/40 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -113,7 +113,7 @@ export function Newsletter() {
                 {/* Pro Plan */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="group relative p-6 rounded-xl bg-gradient-to-br from-violet-500/20 to-violet-900/20 border border-violet-500/30 backdrop-blur-sm hover:border-violet-500/50 transition-all duration-300 flex flex-col justify-between"
+                  className="group relative p-6 rounded-xl bg-gradient-to-br from-violet-900/20 to-violet-950/20 border border-violet-800/30 backdrop-blur-sm hover:border-violet-700/50 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="absolute -top-2 -right-2">
@@ -145,7 +145,7 @@ export function Newsletter() {
                       </li>
                     </ul>
                   </div>
-                  <button className="w-full mt-6 px-4 py-2 bg-violet-500 hover:bg-violet-600 text-white rounded-lg transition-colors">
+                  <button className="w-full mt-6 px-4 py-2 bg-violet-800 hover:bg-violet-900 text-white rounded-lg transition-colors">
                     Go Pro
                   </button>
                 </motion.div>
@@ -153,7 +153,7 @@ export function Newsletter() {
                 {/* Enterprise Plan */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="group p-6 rounded-xl bg-gradient-to-br from-violet-600/20 to-violet-900/20 border border-violet-500/30 backdrop-blur-sm hover:border-violet-500/50 transition-all duration-300 flex flex-col justify-between"
+                  className="group p-6 rounded-xl bg-gradient-to-br from-violet-900/20 to-violet-950/20 border border-violet-800/30 backdrop-blur-sm hover:border-violet-700/50 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div className="flex items-center justify-between mb-4">
@@ -181,7 +181,7 @@ export function Newsletter() {
                       </li>
                     </ul>
                   </div>
-                  <button className="w-full mt-6 px-4 py-2 bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 text-white rounded-lg transition-colors">
+                  <button className="w-full mt-6 px-4 py-2 bg-gradient-to-r from-violet-800 to-violet-900 hover:from-violet-900 hover:to-violet-950 text-white rounded-lg transition-colors">
                     Contact Sales
                   </button>
                 </motion.div>
@@ -193,17 +193,17 @@ export function Newsletter() {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-violet-500/5 to-transparent blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-violet-900/10 via-violet-900/5 to-transparent blur-xl" />
                 <div className="relative flex flex-col sm:flex-row gap-4">
                   <div className="flex-1 relative">
                     <input
                       type="email"
                       placeholder="Enter your email address"
-                      className="w-full px-12 py-4 bg-white/5 border border-violet-500/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-violet-500/50 focus:ring-2 focus:ring-violet-500/20 transition-all duration-300"
+                      className="w-full px-12 py-4 bg-black/40 border border-violet-800/20 rounded-xl text-white placeholder:text-white/50 focus:outline-none focus:border-violet-700/50 focus:ring-2 focus:ring-violet-800/20 transition-all duration-300"
                     />
-                    <IconMail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-violet-400/50" />
+                    <IconMail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-violet-600/50" />
                   </div>
-                  <button className="px-8 py-4 bg-violet-500 hover:bg-violet-600 text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group">
+                  <button className="px-8 py-4 bg-violet-800 hover:bg-violet-900 text-white rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group">
                     Subscribe Now
                     <IconArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
