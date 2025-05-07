@@ -26,10 +26,10 @@ export default function Template({ children }) {
   }, [pathname]);
 
   return (
-    <>
+    <div suppressHydrationWarning>
       {showNav && <MainNavbar />}
       {children}
       {showNav && <Footer />}
-    </>
+    </div>
   );
 }

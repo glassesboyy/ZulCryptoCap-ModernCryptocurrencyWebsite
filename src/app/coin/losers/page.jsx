@@ -1,3 +1,5 @@
+import { IconArrowLeft } from "@tabler/icons-react";
+import Link from "next/link";
 import { getCoinItems } from "@/components/data/coin-data";
 import TableExpand from "@/components/ui/table-expand";
 

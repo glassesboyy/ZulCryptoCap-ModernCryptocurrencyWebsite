@@ -28,7 +28,7 @@ export function Newsletter() {
           {/* Enhanced Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-violet-950/10 to-black/70" />
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
+            <div className="absolute inset-0" />
           </div>
 
           {/* Content */}

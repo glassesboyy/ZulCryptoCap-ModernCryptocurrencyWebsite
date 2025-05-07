@@ -1,5 +1,7 @@
 import { getCoinItems } from "@/components/data/coin-data";
 import TableExpand from "@/components/ui/table-expand";
+import { IconArrowLeft } from "@tabler/icons-react";
+import Link from "next/link";
 
 export default function PopularPage() {
   const allCoins = getCoinItems(100);

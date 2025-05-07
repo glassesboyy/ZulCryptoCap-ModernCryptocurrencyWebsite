@@ -8,7 +8,7 @@ import { Tutorial } from "@/components/page/home-page/tutorial";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
       <Hero />
       <Feature />
       <MarketUpdate />
